@@ -6,7 +6,93 @@ level = 2
 type = "monster effect"
 race = "beast"
 set = "ojama"
+atk = 0
 def = 1000
 effect = '''
 Tribute this card: Special Summon 3 Level 2 "Ojama" monsters with different names from your deck, other than "Ojama Rescue", their effects are negated untill the end of the turn.'''
 ot = "CUSTOM"
+
+# not yet implemented
+
+[card.ojama-silver]
+id = 16797002
+name = "Ojama Silver"
+attribute = "light"
+level = 2
+type = "monster pendulum effect"
+race = "beast"
+set = "ojama"
+atk =0
+def = 1000
+effect = '''
+(Quick Effect) Tribute this card: Negate an opponent's attack.'''
+pendulum-effect = '''
+Once per turn: look at a number of your oponent's facedown cards, up to the number of "Ojama" Normal monsters you control (min. 1).'''
+ot = "CUSTOM"
+
+
+[card.ojama-lime]
+id = 16797003
+name = "Ojama Lime"
+attribute = "light"
+level = 2
+type = "monster effect"
+race = "beast"
+set = "ojama"
+atk =0
+def = 1000
+effect = '''
+If you normal or special an "Ojama" monster, you can special summon this card from your hand.
+You can only use the effect of "Ojama Lime" once per turn.'''
+ot = "CUSTOM"
+
+[card.ojama-gold]
+id = 16797004
+name = "Ojama Gold"
+attribute = "light"
+level = 2
+type = "monster pendulum effect"
+race = "beast"
+set = "ojama"
+atk =0
+def = 1000
+pendulum-scale = 4
+effect = '''
+This card can attack your opponent directly.
+Divide this card's ATK by half during damage calculation only.'''
+pendulum-effect = '''
+Once per turn: Add an "Ojama" spell/trap card, "Uniform Nomenclature" spell/trap card, "Solidarity", "Painful Decision", "Painful Escape" or "Super Team Buddy Force Unite!" from your deck to your hand,'''
+ot = "CUSTOM"
+
+
+[card.ojama-black]
+id = 16797005
+name = "Ojama Black"
+attribute = "light"
+level = 2
+type = "monster  effect"
+race = "beast"
+set = "ojama"
+atk =0
+def = 1000
+effect = '''
+When you summon this card, if you do not control "Ojama White", you can special it from your hand, deck or GY.'''
+ot = "CUSTOM"
+
+
+[card.ojama-white]
+id = 16797006
+name = "Ojama White"
+attribute = "light"
+level = 2
+type = "monster  effect"
+race = "beast"
+set = "ojama"
+atk =0
+def = 1000
+effect = '''
+When you summon this card, if you do not control "Ojama Black", you can special it from your hand, deck or GY.'''
+ot = "CUSTOM"
+
+
+
