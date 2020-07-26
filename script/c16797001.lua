@@ -16,7 +16,7 @@ function s.spcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():IsAbleToGraveAsCost() end
 	Duel.SendtoGrave(e:GetHandler(),REASON_COST)
 end
-s.listed_sets = {0xf}
+s.listed_series = {0xf}
 s.listed_names = {16797001}
 function s.filter(c,e,tp)
 	return c:IsLevel(2) and c:IsSetCard(0xf) and c:IsCanBeSpecialSummoned(e,0,tp,false,false) and not c:IsCode(16797001)
