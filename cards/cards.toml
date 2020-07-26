@@ -1,0 +1,12 @@
+[card.ojama-rescue]
+id = 16797001
+name = "Ojama Rescue"
+attribute = "light"
+level = 2
+type = "monster effect"
+race = "beast"
+set = "ojama"
+def = 1000
+effect = '''
+Tribute this card: Special Summon 3 "Ojama" monsters with different names from your deck, other than "Ojama Rescue", their effects are negated untill the end of the turn.'''
+ot = "CUSTOM"
