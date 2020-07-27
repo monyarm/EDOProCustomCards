@@ -9,7 +9,7 @@ set = "ojama"
 atk = 0
 def = 1000
 effect = '''
-Tribute this card: Special Summon 3 Level 2 "Ojama" monsters with different names from your deck, other than "Ojama Rescue", their effects are negated untill the end of the turn.'''
+Tribute this card: Special Summon 3 Level 2 "Ojama" monsters with different names from your deck, other than "Ojama Rescue", their effects are negated untill the end of the turn. They are destroyed during the end phase.'''
 ot = "CUSTOM"
 
 
