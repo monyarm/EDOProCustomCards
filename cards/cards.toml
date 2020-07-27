@@ -65,7 +65,7 @@ ot = "CUSTOM"
 
 [card.ojama-black]
 id = 16797005
-name = "Ojama Black"
+name = "Ojama Graphite"
 attribute = "light"
 level = 2
 type = "monster  effect"
@@ -74,13 +74,13 @@ set = "ojama"
 atk =0
 def = 1000
 effect = '''
-When this card is Summoned while you do not control "Ojama White" in your Monster Zone: Special Summon 1 "Ojama White" from your hand or GY. You can only use this effect of "Ojama Black" once per turn.'''
+When this card is Summoned while you do not control "Ojama Marble" in your Monster Zone: Special Summon 1 "Ojama Marble" from your hand or GY. You can only use this effect of "Ojama Graphite" once per turn.'''
 ot = "CUSTOM"
 
 
 [card.ojama-white]
 id = 16797006
-name = "Ojama White"
+name = "Ojama Marble"
 attribute = "light"
 level = 2
 type = "monster  effect"
@@ -89,7 +89,7 @@ set = "ojama"
 atk =0
 def = 1000
 effect = '''
-When this card is Summoned while you do not control "Ojama Black" in your Monster Zone: Special Summon 1 "Ojama Black" from your hand or GY. You can only use this effect of "Ojama White" once per turn.'''
+When this card is Summoned while you do not control "Ojama Graphite" in your Monster Zone: Special Summon 1 "Ojama Graphite" from your hand or GY. You can only use this effect of "Ojama Marble" once per turn.'''
 ot = "CUSTOM"
 
 

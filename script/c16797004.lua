@@ -2,7 +2,8 @@
 local s, id = GetID()
 function s.initial_effect(c)
   -- effects
-	--search
+  --search
+  Pendulum.AddProcedure(c)
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,0))
 	e2:SetCategory(CATEGORY_TOHAND+CATEGORY_SEARCH+CATEGORY_HANDES)
