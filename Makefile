@@ -1,15 +1,16 @@
-artwork := $(wildcard artwork/*jpg artwork/*.png)
+artwork := $(wildcard artwork/*.jpg artwork/*.png)
+toml := $(wildcard cards/*.toml)
 
 default: KamenRider.cdb pics
 
 
-KamenRider.cdb: cards/cards.toml cards/sets.toml cards/macro.toml config.toml Makefile
+KamenRider.cdb:config.toml $(toml) Makefile
 	#mkdir expansions
 	ygofab make
 	cp expansions/* .
 	#rmdir expansions
 
-pics: $(artwork) config.toml cards/cards.toml cards/sets.toml cards/macro.toml Makefile
+pics: $(artwork) config.toml $(toml) Makefile
 	ygofab compose -Pall -Eall
 	rm -rf pics/field
 	mv pics/Custom/* pics/
