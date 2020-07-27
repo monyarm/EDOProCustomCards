@@ -92,5 +92,30 @@ effect = '''
 When this card is Summoned while you do not control "Ojama Graphite" in your Monster Zone: Special Summon 1 "Ojama Graphite" from your hand or GY. You can only use this effect of "Ojama Marble" once per turn.'''
 ot = "CUSTOM"
 
+[card.ojama-overload]
+id = 16797007
+name = "Ojama Overload"
+type = "spell quickplay"
+set = "ojama"
+effect='''
+Fusion Summon 1 Fusion Monster from your Extra Deck that lists a "Ojama" monster as material, by shuffling the Fusion Materials listed on it into the Deck, from among your cards on the field and/or your face-up banished cards, but monsters you control cannot attack for the rest of this turn, except that Fusion Summoned monster. You can only activate 1 "Ojama Overload" per turn.'''
+ot = "CUSTOM"
 
+[card.miracle-ojama-fusion]
+id = 16797008
+name = "Miracle Ojama Fusion"
+type = "spell"
+set = "ojama"
+effect = '''
+Fusion Summon 1 "Ojama" Fusion Monster from your Extra Deck, by banishing Fusion Materials listed on it from your field or your GY.'''
+ot = "CUSTOM"
+
+[card.ojama-coronation]
+id = 16797009
+name = "Ojama Coronation"
+type = "spell"
+set = "ojama"
+effect='''
+Fusion Summon 1 "Ojama King" from your Extra Deck, by returning 1 each of "Ojama Green", "Ojama Black", and "Ojama Yellow" from your hand, GY, and/or anywhere on your field, to the Deck, as Fusion Material.'''
+ot = "CUSTOM"
 

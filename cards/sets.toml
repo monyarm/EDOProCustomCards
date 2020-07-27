@@ -1,3 +1,7 @@
 [set.ojama]
 code = 0xf
 name = "Ojama"
+
+[set.mecha-ojama]
+code = 0xa00f
+name = "Mecha Ojama"
