@@ -37,9 +37,9 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 		local sg=g:Select(tp,3,3,nil)
 		Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP)
 		local tc=sg:GetFirst()
-		tc:RegisterFlagEffect(51102992,RESET_EVENT+RESETS_STANDARD,0,1,fid)
+		tc:RegisterFlagEffect(16797001,RESET_EVENT+RESETS_STANDARD,0,1,fid)
 		tc=sg:GetNext()
-		tc:RegisterFlagEffect(51102992,RESET_EVENT+RESETS_STANDARD,0,1,fid)
+		tc:RegisterFlagEffect(16797001,RESET_EVENT+RESETS_STANDARD,0,1,fid)
 		sg:KeepAlive()
 		local e1=Effect.CreateEffect(e:GetHandler())
 		e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
@@ -54,7 +54,7 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function s.desfilter(c,fid)
-	return c:GetFlagEffectLabel(51102992)==fid
+	return c:GetFlagEffectLabel(16797001)==fid
 end
 function s.descon(e,tp,eg,ep,ev,re,r,rp)
 	local g=e:GetLabelObject()
