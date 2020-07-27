@@ -12,7 +12,6 @@ effect = '''
 Tribute this card: Special Summon 3 Level 2 "Ojama" monsters with different names from your deck, other than "Ojama Rescue", their effects are negated untill the end of the turn.'''
 ot = "CUSTOM"
 
-# not yet implemented
 
 [card.ojama-silver]
 id = 16797002
@@ -24,8 +23,7 @@ race = "beast"
 set = "ojama"
 atk =0
 def = 1000
-effect = '''
-(Quick Effect) Tribute this card: Negate an opponent's attack.'''
+effect = '''Once per turn, your opponent's next attack is negated.'''
 pendulum-effect = '''
 Once per turn: look at a number of your oponent's facedown cards, up to the number of "Ojama" Normal monsters you control (min. 1).'''
 ot = "CUSTOM"
@@ -46,6 +44,7 @@ If you normal or special an "Ojama" monster, you can special summon this card fr
 You can only use the effect of "Ojama Lime" once per turn.'''
 ot = "CUSTOM"
 
+
 [card.ojama-gold]
 id = 16797004
 name = "Ojama Gold"
@@ -58,10 +57,9 @@ atk =0
 def = 1000
 pendulum-scale = 4
 effect = '''
-This card can attack your opponent directly.
-Divide this card's ATK by half during damage calculation only.'''
+This card can attack your opponent directly, but when it uses this effect, any battle damage it inflicts to your opponent is halved.'''
 pendulum-effect = '''
-Once per turn: Add an "Ojama" spell/trap card, "Uniform Nomenclature" spell/trap card, "Solidarity", "Painful Decision", "Painful Escape" or "Super Team Buddy Force Unite!" from your deck to your hand,'''
+Once per turn: Add an "Ojama" spell/trap card, "Treaty on Uniform Nomenclature", "League of Uniform Nomenclature", "Solidarity", "Painful Decision", "Painful Escape" or "Super Team Buddy Force Unite!" from your deck to your hand,'''
 ot = "CUSTOM"
 
 
@@ -76,7 +74,7 @@ set = "ojama"
 atk =0
 def = 1000
 effect = '''
-When you summon this card, if you do not control "Ojama White", you can special it from your hand, deck or GY.'''
+When this card is Summoned while you do not control "Ojama White" in your Monster Zone: Special Summon 1 "Ojama White" from your hand or GY. You can only use this effect of "Ojama Black" once per turn.'''
 ot = "CUSTOM"
 
 
@@ -91,7 +89,7 @@ set = "ojama"
 atk =0
 def = 1000
 effect = '''
-When you summon this card, if you do not control "Ojama Black", you can special it from your hand, deck or GY.'''
+When this card is Summoned while you do not control "Ojama Black" in your Monster Zone: Special Summon 1 "Ojama Black" from your hand or GY. You can only use this effect of "Ojama White" once per turn.'''
 ot = "CUSTOM"
 
 
