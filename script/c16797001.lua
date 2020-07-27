@@ -31,12 +31,14 @@ end
 function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	if Duel.IsPlayerAffectedByEffect(tp,CARD_BLUEEYES_SPIRIT) or Duel.GetLocationCount(tp,LOCATION_MZONE)<=1 then return end
 	local g=Duel.GetMatchingGroup(s.filter,tp,LOCATION_DECK,0,nil,e,tp)
-	if #g>=2 then
+	if #g>=3 then
 		local fid=e:GetHandler():GetFieldID()
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 		local sg=g:Select(tp,3,3,nil)
 		Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP)
 		local tc=sg:GetFirst()
+		tc:RegisterFlagEffect(16797001,RESET_EVENT+RESETS_STANDARD,0,1,fid)
+		tc=sg:GetNext()
 		tc:RegisterFlagEffect(16797001,RESET_EVENT+RESETS_STANDARD,0,1,fid)
 		tc=sg:GetNext()
 		tc:RegisterFlagEffect(16797001,RESET_EVENT+RESETS_STANDARD,0,1,fid)
