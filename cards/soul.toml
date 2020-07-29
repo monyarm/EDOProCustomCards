@@ -202,7 +202,7 @@ ot="CUSTOM"
 
 [card.illusion-key]
 id=111000024
-name="Ties of Friendship"
+name="Illusion Key"
 type="monster normal"
 atk = -1
 def = -1
