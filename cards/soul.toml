@@ -1,0 +1,741 @@
+[card.soul-akiza]
+id=111000009
+name="Akiza Izinski"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="psychic"
+effect = '''
+17 years old
+Her father is in Congress.
+Due to awakening in her youth as a Psychic Duelist, she lost her mind but was saved by Yusei.'''
+ot="CUSTOM"
+
+[card.soul-qrow]
+id=111000010
+name="Qrow Hogan"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="winged-beast"
+effect = '''
+18 years old
+Grew up as an orphan in the western district of Domino.
+He gathers and raises the orphans of Satellite by himself. His face is covered with criminal marks due to his frequent thefts.'''
+ot="CUSTOM"
+
+[card.soul-yusei]
+id=111000011
+name="Yusei Fudo"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="warrior"
+effect = '''
+18 years old
+Born in the western district of Domino.
+His father was a scientist. His type of nature is based around technology, computer programming, and building machines.'''
+ot="CUSTOM"
+
+[card.soul-jack]
+id=111000012
+name="Jack Atlas"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="dragon"
+effect = '''
+19 years old
+Grew up as an orphan in the western district of Domino.
+He became the "Duel King" due to his noble spirit and his talented skills.'''
+ot="CUSTOM"
+
+[card.soul-leo-luna]
+id=111000013
+name="Leo / Luna"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="dragon"
+effect = '''
+10 years old
+Energetic twin siblings.
+Their parents tend to be absent, since they are always traveling around the world.
+The two live like super celebrities in the hotel's penthouse.'''
+ot="CUSTOM"
+
+
+[card.duelist-kingdom]
+id=111000014
+name="Duelist Kingdom"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+
+[card.glory-of-the-kings-hand]
+id=111000015
+name="Glory of the Kings Hand"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+
+[card.set-sail-for-the-kingdom]
+id=111000016
+name="Set Sail for the Kingdom"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-cecelia-pegasus]
+id=111000017
+name="Cecelia Pegasus"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+
+[card.soul-cecelia-pegasus1]
+id=111000021
+name="Cecelia Pegasus"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-cecelia-pegasus2]
+id=111000022
+name="Cecelia Pegasus"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-solomon-muto]
+id=111000018
+name="Solomon Muto"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+
+[card.soul-seto-kaiba]
+id=111000019
+name="Seto Kaiba"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-mokuba-kaiba]
+id=111000020
+name="Mokuba Kaiba"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+
+[card.ties-of-friendhip]
+id=111000023
+name="Ties of Friendship"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="fairy"
+effect = ''''''
+ot="CUSTOM"
+
+[card.illusion-key]
+id=111000024
+name="Ties of Friendship"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="machine"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-ashley-hegi]
+id=111000025
+name="Ashley Hegi"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-ashley-bram]
+id=111000026
+name="Bram"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-ashley-carl]
+id=111000027
+name="Carl"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-hokuto-shijima]
+id=111000028
+name="Hokuto Shijima"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-halil]
+id=111000029
+name="Halil"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-olga]
+id=111000030
+name="Olga"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-ydl]
+id=111000031
+name="Youth Division Lancer"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-lds-student1]
+id=111000032
+name="Leo Duel School Student"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-lds-student2]
+id=111000033
+name="Leo Duel School Student"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-lds-student3]
+id=111000034
+name="Leo Duel School Student"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-michio]
+id=111000035
+name="Michio Mokota"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-hikage-fuma]
+id=111000036
+name="Hikage Fuma"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-teppei]
+id=111000037
+name="Teppei Tairyobata"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-marco]
+id=111000038
+name="Professor Marco"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-tio]
+id=111000039
+name="Tio"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-xyz-resistance-1]
+id=111000040
+name="XYZ Dimension Resistance Member"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-xyz-resistance-2]
+id=111000041
+name="XYZ Dimension Resistance Member"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-xyz-resistance-3]
+id=111000042
+name="XYZ Dimension Resistance Member"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-xyz-citizen-1]
+id=111000043
+name="XYZ Dimension Citizen"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-xyz-citizen-2]
+id=111000044
+name="XYZ Dimension Citizen"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-xyz-citizen-3]
+id=111000044
+name="XYZ Dimension Citizen"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-xyz-citizen-4]
+id=111000045
+name="XYZ Dimension Citizen"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-xyz-citizen-5]
+id=111000046
+name="XYZ Dimension Citizen"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-xyz-citizen-6]
+id=111000047
+name="XYZ Dimension Citizen"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-xyz-citizen-7]
+id=111000048
+name="XYZ Dimension Citizen"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-xyz-citizen-8]
+id=111000049
+name="XYZ Dimension Citizen"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-xyz-citizen-9]
+id=111000050
+name="XYZ Dimension Citizen"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-xyz-citizen-10]
+id=111000051
+name="XYZ Dimension Citizen"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-xyz-citizen-11]
+id=111000052
+name="XYZ Dimension Citizen"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-alexis]
+id=111000053
+name="Alexis Rhodes"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-sakaki]
+id=111000054
+name="Sakaki Yusho"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-qrow-arc-v]
+id=111000055
+name="Qrow Hogan"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-dual-academia-traitor]
+id=111000056
+name="Duel Academia Traitor"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-bernie]
+id=111000057
+name="Bernie"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-emma]
+id=111000058
+name="Emma"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-jacob]
+id=111000059
+name="Jacob"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-ethan]
+id=111000060
+name="Ethan"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-tsukikage-fuma]
+id=111000061
+name="Tsukikage Fuma"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-ysds-student]
+id=111000062
+name="You Show Duel School Student"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-the-doktor]
+id=111000063
+name="The Doktor"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-duel-akademia-student-1]
+id=111000064
+name="Duel Akademia Student"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-duel-akademia-student-2]
+id=111000065
+name="Duel Akademia Student"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-duel-akademia-student-3]
+id=111000066
+name="Duel Akademia Student"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"
+
+[card.soul-duel-akademia-student-4]
+id=111000067
+name="Duel Akademia Student"
+type="monster normal"
+atk = -1
+def = -1
+attribute="all"
+
+race="divine-beast"
+effect = ''''''
+ot="CUSTOM"

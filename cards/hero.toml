@@ -1,0 +1,37 @@
+[card.ehero-volcano]
+id = 83630001
+name = "Elemental HERO Volcano"
+level = 8
+attribute = "fire"
+race = "warrior"
+type = "monster fusion effect"
+atk = 3000
+def = 2500
+series = "elemental-hero"
+effect = '''
+1 FIRE or EARTH "HERO" monster + 1 FIRE or EARTH monster.
+This card is also treated as an EARTH monster.
+Once per turn, you can banish an EARTH "HERO" monster, and a FIRE "HERO" monster from your GY: Elemental HERO Volcano is not affected by your opponent's card effects untill the end of the turn.
+Once per turn, choose one:
+● You can banish an EARTH "HERO" monster in your GY: Untill the end of the turn this card gains ATK equals to the banished monster's DEF.
+● You can banish an FIRE "HERO" monster in your GY: Untill the end of the turn this card gains ATK equals to the banished monster's ATK.
+'''
+
+[card.ehero-blackhole]
+id = 83630002
+name = "Elemental HERO Black Hole"
+level = 8
+attribute = "dark"
+race = "warrior"
+type = "monster fusion effect"
+atk = 2800
+def = 2200
+series = "elemental-hero"
+effect = '''
+1 LIGHT or DARK "HERO" monster + 1 LIGHT or DARK monster.
+This card is also treated as a LIGHT monster.
+Once per turn, you can banish an LIGHT "HERO" monster, and a DARK "HERO" monster from your GY: Destroy all monsters your opponent controls. You deal no battle damage untill the end of turn
+Once per turn, choose one:
+● You can banish an LIGHT "HERO" monster in your GY: Target one monster your opponent controls, if the banished monster has more or equal ATK, the target monster is destroyed. Yout opponent takes damage equal to the difference.
+● You can banish an DARK "HERO" monster in your GY: Target one monster your opponent controls, if the banished monster has more or equal DEF, the target monster is destroyed. Yout opponent takes damage equal to the difference.
+'''

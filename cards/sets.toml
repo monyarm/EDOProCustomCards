@@ -5,3 +5,28 @@ name = "Ojama"
 [set.mecha-ojama]
 code = 0xa00f
 name = "Mecha Ojama"
+
+
+[set.elemental-hero]
+code = 0x3008
+name = "Elemental HERO"
+
+[set.hero]
+code = 0x8
+name = "HERO"
+
+[set.vision-hero]
+code = 0x5008
+name = "Vision HERO"
+
+[set.evil-hero]
+code = 0x6008
+name = "Evil HERO"
+
+[set.masked-hero]
+code = 0xa008
+name = "Masked HERO"
+
+[set.destiny-hero]
+code = 0xc008
+name = "Destiny HERO"

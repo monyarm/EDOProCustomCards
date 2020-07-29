@@ -5,15 +5,20 @@
 
 [expansion.Custom]
 default = true
-recipe = ["cards/sets.toml", "cards/ojama.toml", "cards/macro.toml"]
+recipe = ["cards/sets.toml", "cards/ojama.toml", "cards/macro.toml", "cards/hero.toml"]
+
+
+[expansion.Soul]
+default = true
+recipe = ["cards/sets.toml", "cards/macro.toml", "cards/soul.toml", "cards/orichalcos.toml"]
 
 [gamedir.Custom]
 path = "/run/media/monyarm/Windows 7/ProjectIgnis/"
 
-[picset.Custom] 
+[picset.proxy] 
 mode = 'proxy'
 size = '512x'
 ext = 'png'
 year = 2020
 author = 'monyarm'
-field = true
+field = true 

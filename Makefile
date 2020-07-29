@@ -11,8 +11,6 @@ KamenRider.cdb:config.toml $(toml) Makefile
 	#rmdir expansions
 
 pics: $(artwork) config.toml $(toml) Makefile
-	ygofab compose -Pall -Eall
-	rm -rf pics/field
-	mv pics/Custom/* pics/
-	rmdir pics/Custom
+	ygofab compose -p proxy -Eall
+	cp -r pics/proxy/* pics/
 
