@@ -9,7 +9,7 @@ id=121000001
 name="Gurimo"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SOUL"
 
 [card.orichalcos-soul-pegasus]
 id=121000002
