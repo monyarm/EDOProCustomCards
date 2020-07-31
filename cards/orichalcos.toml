@@ -9,119 +9,119 @@ id=121000001
 name="Gurimo"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="LEGEND"
+ot="SPEED"
 
 [card.orichalcos-soul-pegasus]
 id=121000002
 name="Maximillion Pegasus"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="HIDDEN"
+ot="SPEED"
 
 [card.orichalcos-soul-yugi]
 id=121000003
 name="Yugi Muto"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.orichalcos-soul-joey]
 id=121000004
 name="Joey Wheeler"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.orichalcos-soul-rex]
 id=121000005
 name="Rex Raptor"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.orichalcos-soul-prisoner-1]
 id=121000006
 name="Prisoner"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.orichalcos-soul-prisoner-2]
 id=121000007
 name="Prisoner"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.orichalcos-soul-weevil]
 id=121000008
 name="Weevil Underwood"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.orichalcos-soul-akiza]
 id=121000009
 name="Akiza Izinski"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.orichalcos-soul-qrow]
 id=121000010
 name="Qrow Hogan"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.orichalcos-soul-yusei]
 id=121000011
 name="Yusei Fudo"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.orichalcos-soul-jack]
 id=121000012
 name="Jack Atlas"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.orichalcos-soul-leoluna]
 id=121000013
 name="Leo / Luna"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.orichalcos-soul-solomon]
 id=121000018
 name="Solomon Muto"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.orichalcos-soul-seto]
 id=121000019
 name="Seto Kaiba"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.orichalcos-soul-mokuba]
 id=121000020
 name="Mokuba Kaiba"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.orichalcos-soul-aleix]
 id=121000021
 name="Alexis Rhodes"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="SPEED"
 
 
 

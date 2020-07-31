@@ -11,7 +11,7 @@ effect = '''
 17 years old
 Her father is in Congress.
 Due to awakening in her youth as a Psychic Duelist, she lost her mind but was saved by Yusei.'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-qrow]
 id=111000010
@@ -26,7 +26,7 @@ effect = '''
 18 years old
 Grew up as an orphan in the western district of Domino.
 He gathers and raises the orphans of Satellite by himself. His face is covered with criminal marks due to his frequent thefts.'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-yusei]
 id=111000011
@@ -41,7 +41,7 @@ effect = '''
 18 years old
 Born in the western district of Domino.
 His father was a scientist. His type of nature is based around technology, computer programming, and building machines.'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-jack]
 id=111000012
@@ -56,7 +56,7 @@ effect = '''
 19 years old
 Grew up as an orphan in the western district of Domino.
 He became the "Duel King" due to his noble spirit and his talented skills.'''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-leo-luna]
 id=111000013
@@ -72,7 +72,7 @@ effect = '''
 Energetic twin siblings.
 Their parents tend to be absent, since they are always traveling around the world.
 The two live like super celebrities in the hotel's penthouse.'''
-ot="CUSTOM"
+ot="SPEED"
 
 
 [card.duelist-kingdom]
@@ -85,7 +85,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 
 [card.glory-of-the-kings-hand]
@@ -98,7 +98,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 
 [card.set-sail-for-the-kingdom]
@@ -111,7 +111,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-cecelia-pegasus]
 id=111000017
@@ -123,7 +123,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 
 [card.soul-cecelia-pegasus1]
@@ -136,7 +136,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-cecelia-pegasus2]
 id=111000022
@@ -148,7 +148,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-solomon-muto]
 id=111000018
@@ -160,7 +160,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 
 [card.soul-seto-kaiba]
@@ -173,7 +173,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-mokuba-kaiba]
 id=111000020
@@ -185,7 +185,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 
 [card.ties-of-friendhip]
@@ -198,7 +198,7 @@ attribute="all"
 
 race="fairy"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.illusion-key]
 id=111000024
@@ -210,7 +210,7 @@ attribute="all"
 
 race="machine"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-ashley-hegi]
 id=111000025
@@ -222,7 +222,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-ashley-bram]
 id=111000026
@@ -234,7 +234,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-ashley-carl]
 id=111000027
@@ -246,7 +246,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-hokuto-shijima]
 id=111000028
@@ -258,7 +258,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-halil]
 id=111000029
@@ -270,7 +270,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-olga]
 id=111000030
@@ -282,7 +282,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-ydl]
 id=111000031
@@ -294,7 +294,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-lds-student1]
 id=111000032
@@ -306,7 +306,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-lds-student2]
 id=111000033
@@ -318,7 +318,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-lds-student3]
 id=111000034
@@ -330,7 +330,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-michio]
 id=111000035
@@ -342,7 +342,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-hikage-fuma]
 id=111000036
@@ -354,7 +354,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-teppei]
 id=111000037
@@ -366,7 +366,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-marco]
 id=111000038
@@ -378,7 +378,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-tio]
 id=111000039
@@ -390,7 +390,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-xyz-resistance-1]
 id=111000040
@@ -402,7 +402,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-xyz-resistance-2]
 id=111000041
@@ -414,7 +414,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-xyz-resistance-3]
 id=111000042
@@ -426,7 +426,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-xyz-citizen-1]
 id=111000043
@@ -438,7 +438,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-xyz-citizen-2]
 id=111000044
@@ -450,7 +450,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-xyz-citizen-3]
 id=111000044
@@ -462,7 +462,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-xyz-citizen-4]
 id=111000045
@@ -474,7 +474,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-xyz-citizen-5]
 id=111000046
@@ -486,7 +486,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-xyz-citizen-6]
 id=111000047
@@ -498,7 +498,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-xyz-citizen-7]
 id=111000048
@@ -510,7 +510,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-xyz-citizen-8]
 id=111000049
@@ -522,7 +522,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-xyz-citizen-9]
 id=111000050
@@ -534,7 +534,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-xyz-citizen-10]
 id=111000051
@@ -546,7 +546,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-xyz-citizen-11]
 id=111000052
@@ -558,7 +558,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-alexis]
 id=111000053
@@ -570,7 +570,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-sakaki]
 id=111000054
@@ -582,7 +582,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-qrow-arc-v]
 id=111000055
@@ -594,7 +594,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-dual-academia-traitor]
 id=111000056
@@ -606,7 +606,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-bernie]
 id=111000057
@@ -618,7 +618,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-emma]
 id=111000058
@@ -630,7 +630,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-jacob]
 id=111000059
@@ -642,7 +642,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-ethan]
 id=111000060
@@ -654,7 +654,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-tsukikage-fuma]
 id=111000061
@@ -666,7 +666,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-ysds-student]
 id=111000062
@@ -678,7 +678,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-the-doktor]
 id=111000063
@@ -690,7 +690,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-duel-akademia-student-1]
 id=111000064
@@ -702,7 +702,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-duel-akademia-student-2]
 id=111000065
@@ -714,7 +714,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-duel-akademia-student-3]
 id=111000066
@@ -726,7 +726,7 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
 
 [card.soul-duel-akademia-student-4]
 id=111000067
@@ -738,4 +738,4 @@ attribute="all"
 
 race="divine-beast"
 effect = ''''''
-ot="CUSTOM"
+ot="SPEED"
