@@ -9,14 +9,14 @@ id=121000001
 name="Gurimo"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="SOUL"
+ot="LEGEND"
 
 [card.orichalcos-soul-pegasus]
 id=121000002
 name="Maximillion Pegasus"
 type="spell field"
 effect = '''${ORICHALCOS}'''
-ot="CUSTOM"
+ot="HIDDEN"
 
 [card.orichalcos-soul-yugi]
 id=121000003
