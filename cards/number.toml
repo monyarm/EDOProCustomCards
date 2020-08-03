@@ -1,0 +1,14 @@
+[card.n55]
+name = "Number 55: Gogogo Goliath"
+type = "monster xyz effect"
+rank = 4
+setcode = 0x48
+race = "rock"
+attribute = "earth"
+atk = 2400
+def = 1200
+id = 83740001
+effect = '''
+2 Level 4 monsters
+Gogogo Goliath can only be destroyed in battle by a "Number" monster. All monsters you control gain 800 DEF. You can detach 1 Xyz Material from this card, then target 1 Level 4 EARTH Rock-Type monster in your Graveyard; add that target to your hand. You can only use this effect of "Number 55: Gogogo Goliath" once per turn.'''
+ot = "ANIME"

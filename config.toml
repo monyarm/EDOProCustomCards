@@ -5,7 +5,7 @@
 
 [expansion.Custom]
 default = true
-recipe = ["cards/sets.toml", "cards/ojama.toml", "cards/macro.toml", "cards/hero.toml"]
+recipe = ["cards/sets.toml", "cards/ojama.toml", "cards/macro.toml", "cards/hero.toml", "cards/number.toml"]
 
 
 [expansion.Soul]
