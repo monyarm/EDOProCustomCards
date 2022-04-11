@@ -16,6 +16,7 @@ Once per turn, choose one:
 ● You can banish an EARTH "HERO" monster in your GY: Untill the end of the turn this card gains ATK equals to the banished monster's DEF.
 ● You can banish an FIRE "HERO" monster in your GY: Untill the end of the turn this card gains ATK equals to the banished monster's ATK.
 '''
+ot = "CUSTOM"
 
 [card.ehero-blackhole]
 id = 83630002
@@ -35,3 +36,4 @@ Once per turn, choose one:
 ● You can banish an LIGHT "HERO" monster in your GY: Target one monster your opponent controls, if the banished monster has more or equal ATK, the target monster is destroyed. Yout opponent takes damage equal to the difference.
 ● You can banish an DARK "HERO" monster in your GY: Target one monster your opponent controls, if the banished monster has more or equal DEF, the target monster is destroyed. Yout opponent takes damage equal to the difference.
 '''
+ot = "CUSTOM"
