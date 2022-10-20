@@ -1,0 +1,24 @@
+[card.crystal-keeper]
+name = "Crystal Keeper"
+attribute = "fire"
+race = "warrior"
+atk = 1500
+def = 1800
+level = 4
+type = "monster effect"
+id = 144000001
+effect = '''
+If a "Crystal Beast" monster you control battles an opponent's monster, during damage calculation (Quick Effect): You can Tribute this card from your hand or face-up field; your battling monster's ATK/DEF become double its original ATK/DEF during that damage calculation only, but it is destroyed at the end of this Damage Step.'''
+
+
+[card.crystal-master]
+name = "Crystal Master"
+attribute = "dark"
+race = "spellcaster"
+atk = 1300
+def = 1000
+level = 3
+type = "monster effect"
+id = 144000002
+effect = '''
+You can Tribute this card; add 1 "Ultimate Crystal" monster, "Crystal Beast" monster, or "Crystal" Spell/Trap from your Deck to your hand.'''
