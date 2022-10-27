@@ -4,7 +4,7 @@ name="Akiza Izinski"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
+
 
 race="psychic"
 effect = '''
@@ -19,7 +19,7 @@ name="Qrow Hogan"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
+
 
 race="winged-beast"
 effect = '''
@@ -34,7 +34,7 @@ name="Yusei Fudo"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
+
 
 race="warrior"
 effect = '''
@@ -49,7 +49,7 @@ name="Jack Atlas"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
+
 
 race="dragon"
 effect = '''
@@ -64,7 +64,7 @@ name="Leo / Luna"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
+
 
 race="dragon"
 effect = '''
@@ -81,9 +81,6 @@ name="Duelist Kingdom"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -94,9 +91,6 @@ name="Glory of the Kings Hand"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -107,9 +101,6 @@ name="Set Sail for the Kingdom"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -119,9 +110,6 @@ name="Cecelia Pegasus"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -132,9 +120,6 @@ name="Cecelia Pegasus"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -144,9 +129,6 @@ name="Cecelia Pegasus"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -156,9 +138,6 @@ name="Solomon Muto"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -169,9 +148,6 @@ name="Seto Kaiba"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -181,9 +157,6 @@ name="Mokuba Kaiba"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -194,7 +167,7 @@ name="Ties of Friendship"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
+
 
 race="fairy"
 effect = ''''''
@@ -206,7 +179,7 @@ name="Illusion Key"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
+
 
 race="machine"
 effect = ''''''
@@ -218,9 +191,6 @@ name="Ashley Hegi"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -230,9 +200,6 @@ name="Bram"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -242,9 +209,6 @@ name="Carl"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -254,9 +218,6 @@ name="Hokuto Shijima"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -266,9 +227,6 @@ name="Halil"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -278,9 +236,6 @@ name="Olga"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -290,9 +245,6 @@ name="Youth Division Lancer"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -302,9 +254,6 @@ name="Leo Duel School Student"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -314,9 +263,6 @@ name="Leo Duel School Student"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -326,9 +272,6 @@ name="Leo Duel School Student"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -338,9 +281,6 @@ name="Michio Mokota"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -350,9 +290,6 @@ name="Hikage Fuma"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -362,9 +299,6 @@ name="Teppei Tairyobata"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -374,9 +308,6 @@ name="Professor Marco"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -386,9 +317,6 @@ name="Tio"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -398,9 +326,6 @@ name="XYZ Dimension Resistance Member"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -410,9 +335,6 @@ name="XYZ Dimension Resistance Member"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -422,9 +344,6 @@ name="XYZ Dimension Resistance Member"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -434,9 +353,6 @@ name="XYZ Dimension Citizen"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -446,9 +362,6 @@ name="XYZ Dimension Citizen"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -458,9 +371,6 @@ name="XYZ Dimension Citizen"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -470,9 +380,6 @@ name="XYZ Dimension Citizen"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -482,9 +389,6 @@ name="XYZ Dimension Citizen"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -494,9 +398,6 @@ name="XYZ Dimension Citizen"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -506,9 +407,6 @@ name="XYZ Dimension Citizen"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -518,9 +416,6 @@ name="XYZ Dimension Citizen"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -530,9 +425,6 @@ name="XYZ Dimension Citizen"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -542,9 +434,6 @@ name="XYZ Dimension Citizen"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -554,9 +443,6 @@ name="XYZ Dimension Citizen"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -566,9 +452,6 @@ name="Alexis Rhodes"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -578,9 +461,6 @@ name="Sakaki Yusho"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -590,9 +470,6 @@ name="Qrow Hogan"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -602,9 +479,6 @@ name="Duel Academia Traitor"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -614,9 +488,6 @@ name="Bernie"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -626,9 +497,6 @@ name="Emma"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -638,9 +506,6 @@ name="Jacob"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -650,9 +515,6 @@ name="Ethan"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -662,9 +524,6 @@ name="Tsukikage Fuma"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -674,9 +533,6 @@ name="You Show Duel School Student"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -686,9 +542,6 @@ name="The Doktor"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -698,9 +551,6 @@ name="Duel Akademia Student"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -710,9 +560,6 @@ name="Duel Akademia Student"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -722,9 +569,6 @@ name="Duel Akademia Student"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"
 
@@ -734,8 +578,5 @@ name="Duel Akademia Student"
 type="monster normal"
 atk = -1
 def = -1
-attribute="all"
-
-race="divine-beast"
 effect = ''''''
 ot="SPEED"

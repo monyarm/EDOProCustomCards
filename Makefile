@@ -1,10 +1,10 @@
 artwork := $(wildcard artwork/*.jpg artwork/*.png)
 toml := $(wildcard cards/*.toml)
 
-default: KamenRider.cdb pics
+default: Custom.cdb pics
 
 
-KamenRider.cdb:config.toml $(toml) Makefile
+Custom.cdb: config.toml $(toml) Makefile
 	#mkdir expansions
 	ygofab make
 	cp expansions/* .

@@ -1,0 +1,87 @@
+[card.blank-normal]
+type = "monster normal"
+id = 1
+
+[card.blank-effect]
+type = "monster effect"
+id = 2
+
+[card.blank-ritual]
+type = "monster ritual"
+id = 3
+
+[card.blank-fusion]
+type = "monster fusion"
+id = 4
+
+[card.blank-synchro]
+type = "monster synchro"
+id = 5
+
+[card.blank-xyz]
+type = "monster xyz"
+id = 6
+
+[card.blank-link]
+type = "monster link"
+id = 7
+
+[card.blank-normal-pendulum]
+type = "monster normal pendulum"
+id = 8
+
+[card.blank-effect-pendulum]
+type = "monster effect pendulum"
+id = 9
+
+[card.blank-ritual-pendulum]
+type = "monster ritual pendulum"
+id = 10
+
+[card.blank-fusion-pendulum]
+type = "monster fusion pendulum"
+id = 11
+
+[card.blank-synchro-pendulum]
+type = "monster synchro pendulum"
+id = 12
+
+[card.blank-xyz-pendulum]
+type = "monster xyz pendulum"
+id = 13
+
+[card.blank-link-pendulum]
+type = "monster link pendulum"
+id = 14
+
+[card.blank-spell]
+type = "spell"
+id = 15
+
+[card.blank-equip]
+type = "spell equip"
+id = 16
+
+[card.blank-field]
+type = "spell field"
+id = 17
+
+[card.blank-ritual-spell]
+type = "spell ritual"
+id = 18
+
+[card.blank-quickplay]
+type = "spell quickplay"
+id = 19
+
+[card.blank-continuous]
+type = "spell continuous"
+id = 20
+
+[card.blank-trap]
+type = "trap"
+id = 21
+
+[card.blank-trap-continuous]
+type = "trap continuous"
+id = 22
