@@ -2,3 +2,8 @@
 name = "DP Calculator"
 id = 101
 type = "spell"
+ot = "CUSTOM"
+
+[counter.DP]
+code = 0x1111
+name = "DP"

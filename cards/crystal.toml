@@ -9,7 +9,7 @@ type = "monster effect"
 id = 144000001
 effect = '''
 If a "Crystal Beast" monster you control battles an opponent's monster, during damage calculation (Quick Effect): You can Tribute this card from your hand or face-up field; your battling monster's ATK/DEF become double its original ATK/DEF during that damage calculation only, but it is destroyed at the end of this Damage Step.'''
-
+ot = "CUSTOM"
 
 [card.crystal-master]
 name = "Crystal Master"
@@ -20,5 +20,27 @@ def = 1000
 level = 3
 type = "monster effect"
 id = 144000002
+set = "crystal"
 effect = '''
 You can Tribute this card; add 1 "Ultimate Crystal" monster, "Crystal Beast" monster, or "Crystal" Spell/Trap from your Deck to your hand.'''
+ot = "CUSTOM"
+
+[card.gem-paladin-sapphire]
+name = "Gem-Paladin Draco Knight"
+attribute = "light"
+race = "warrior"
+atk = 2500
+def = 1500
+level = 7
+type = "monster fusion effect"
+id = 144000003
+set = "gem-knight crystal-beast"
+effect = '''
+1 "Gem-Knight monster" + 1 "Ultimate Crystal" monster or Rainbow Neos
+(This card is always treated as a Gem-Knight, Crystal Beast and Ultimate Crystal monster)
+This monster gains 100 ATK for each Gem-Knight monster in either player's GY and on the opponent's side of the field.
+This monster gains 100 ATK for each Crystal Beast monster in either player's GY and in your Spell/Trap zones.
+if this card is fusion summoned using 1 "Gem-Knight" monster your opponent controls as a fusion material, it gains its effect(s).
+If this face-up card is destroyed in a Monster Zone, you can place it face-up in your Spell & Trap Zone as a Continuous Spell, instead of sending it to the GY. '''
+ot = "CUSTOM"
+artist = "r4children + konami + monyarm"

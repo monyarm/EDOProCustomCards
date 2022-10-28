@@ -1,25 +1,23 @@
 -- DP Calculator
 local s, id = GetID()
 
-
 local count = {
-  ritual_summon = 0,
-  fusion_summon = 0,
-  synchro_summon = 0,
-  xyz_summon = 0,
-  link_summon = 0,
-
+    ritual_summon = 0,
+    fusion_summon = 0,
+    synchro_summon = 0,
+    xyz_summon = 0,
+    link_summon = 0
 
 }
 
-local COUNTER_DP = 0x1111
+local DP = 0
 
 function s.initial_effect(c)
-  --activate
+    -- activate
     aux.AddSkillProcedure(c, 2, false, nil, nil)
     local e1 = Effect.CreateEffect(c)
     e1:SetType(EFFECT_TYPE_FIELD + EFFECT_TYPE_CONTINUOUS)
-    e1:SetProperty(EFFECT_FLAG_UNCOPYABLE+EFFECT_FLAG_CANNOT_DISABLE)
+    e1:SetProperty(EFFECT_FLAG_UNCOPYABLE + EFFECT_FLAG_CANNOT_DISABLE)
     e1:SetCode(EVENT_PREDRAW)
     e1:SetCondition(s.flipcon)
     e1:SetOperation(s.flipop)
@@ -49,10 +47,8 @@ function s.summonop(e, tp, eg, ep, ev, re, r, rp)
         count.link_summon = count.link_summon + 1;
     end
 
-    e:GetHandler():AddCounter(COUNTER_DP,1)
+    DP = DP + 4
 
-    Debug.Message(summon_type);
-    Debug.Message(count);
 end
 
 function s.flipcon(e, tp, eg, ep, ev, re, r, rp)
@@ -63,13 +59,18 @@ function s.flipop(e, tp, eg, ep, ev, re, r, rp)
     Duel.Hint(HINT_SKILL_FLIP, tp, id | (1 << 32))
     Duel.Hint(HINT_CARD, tp, id)
     Debug.Message("DP Calculator Enabled")
-    
+
     -- Ritual/Fusion/Synchro/XYZ/Link Bonus
     local e2 = Effect.CreateEffect(e:GetHandler())
-    e2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
+    e2:SetType(EFFECT_TYPE_FIELD + EFFECT_TYPE_CONTINUOUS)
     e2:SetCode(EVENT_SPSUMMON_SUCCESS)
     e2:SetCondition(s.summoncon)
     e2:SetOperation(s.summonop)
     Duel.RegisterEffect(e2, 0)
-    
+
+
+end
+
+function s.debugop(e, tp, eg, ep, ev, re, r, rp)
+  Debug.Message("TEST")
 end

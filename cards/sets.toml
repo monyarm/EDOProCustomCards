@@ -30,3 +30,15 @@ name = "Masked HERO"
 [set.destiny-hero]
 code = 0xc008
 name = "Destiny HERO"
+
+[set.crystal]
+code = 0x34
+name = "Crystal"
+
+[set.gem-knight]
+code = 0x1047
+name = "Gem-Knight"
+
+[set.crystal-beast]
+code = 0x1034
+name = "Crystal Beast"
