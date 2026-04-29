@@ -6,7 +6,8 @@ local count = {
     fusion_summon = 0,
     synchro_summon = 0,
     xyz_summon = 0,
-    link_summon = 0
+    link_summon = 0,
+    spell = 0
 
 }
 
@@ -35,21 +36,38 @@ end
 function s.summonop(e, tp, eg, ep, ev, re, r, rp)
     local sc = eg:GetFirst();
     local summon_type = Card.GetSummonType(sc);
+    local summon_string = ""
     if summon_type == SUMMON_TYPE_RITUAL then
         count.ritual_summon = count.ritual_summon + 1;
+        summon_string = "ritual"
     elseif summon_type == SUMMON_TYPE_FUSION then
         count.fusion_summon = count.fusion_summon + 1;
+        summon_string = "fusion"
     elseif summon_type == SUMMON_TYPE_SYNCHRO then
         count.synchro_summon = count.synchro_summon + 1;
+        summon_string = "synchro"
     elseif summon_type == SUMMON_TYPE_XYZ then
         count.xyz_summon = count.xyz_summon + 1;
+        summon_string = "xyz"
     elseif summon_type == SUMMON_TYPE_LINK then
         count.link_summon = count.link_summon + 1;
+        summon_string = "link"
     end
 
     DP = DP + 4
+    s.debugop(string.format("[DP] Awarding for DP for a successful %s summon", summon_string))
 
 end
+
+function s.spop(e, tp, eg, ep, ev, re, r, rp)
+    count.spell = count.spell + 1
+    if (count.spell >= 10) then
+        DP = DP + 2
+        s.debugop("[DP] Awarding for DP for spell")
+    end
+
+
+    end
 
 function s.flipcon(e, tp, eg, ep, ev, re, r, rp)
     -- condition
@@ -68,9 +86,18 @@ function s.flipop(e, tp, eg, ep, ev, re, r, rp)
     e2:SetOperation(s.summonop)
     Duel.RegisterEffect(e2, 0)
 
+    -- Spell Bonus
+    local e0=Effect.CreateEffect(c)
+    e0:SetType(EFFECT_TYPE_CONTINUOUS+EFFECT_TYPE_FIELD)
+    e0:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+    e0:SetCode(EVENT_CHAINING)
+    e0:SetOperation(aux.spop)
+    c:RegisterEffect(e0)
+
 
 end
 
-function s.debugop(e, tp, eg, ep, ev, re, r, rp)
-  Debug.Message("TEST")
+function s.debugop(s)
+  Debug.Message(s)
+  io.write(s)
 end

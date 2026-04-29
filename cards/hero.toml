@@ -37,3 +37,16 @@ Once per turn, choose one:
 ● You can banish an DARK "HERO" monster in your GY: Target one monster your opponent controls, if the banished monster has more or equal DEF, the target monster is destroyed. Yout opponent takes damage equal to the difference.
 '''
 ot = "CUSTOM"
+[card.elemental-hero-neos-kluger]
+name = "Elemental HERO Neos Kluger"
+attribute = "light"
+race = "spellcaster"
+atk = 3000
+def = 2500
+level = 9
+type = "monster fusion effect"
+id = 903074980
+effect = '''
+"Elemental HERO Neos" + "Yubel"
+Must be Fusion Summoned. Before damage calculation, if this card battles an opponent's monster: You can inflict damage to your opponent equal to that opponent's monster's ATK. If this face-up card is destroyed by battle, or leaves the field because of an opponent's card effect while its owner controls it: You can Special Summon 1 "Neos Wiseman" from your Extra Deck, ignoring its Summoning conditions. You can only use this effect of "Elemental HERO Neos Kluger" once per turn.'''
+ot = "CUSTOM"
