@@ -6,7 +6,6 @@ name = "Ojama"
 code = 0xa00f
 name = "Mecha Ojama"
 
-
 [set.elemental-hero]
 code = 0x3008
 name = "Elemental HERO"
@@ -42,3 +41,11 @@ name = "Gem-Knight"
 [set.crystal-beast]
 code = 0x1034
 name = "Crystal Beast"
+
+[set.mythic-hero]
+name = "Mythic HERO"
+code = 0x9008
+
+[set.mythic]
+name = "Mythic"
+code = 0x700

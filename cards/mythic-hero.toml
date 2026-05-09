@@ -1,0 +1,112 @@
+[card.mythic-hero-homer]
+name = "Mythic HERO Homer"
+id = 83650003
+series = "mythic-hero"
+type = "ritual effect monster"
+race = "spellcaster"
+attribute = "LIGHT"
+level = 1
+atk = 0
+def = 0
+effect = '''${MYTHIC_RITUAL_REQ|2}
+● If you Ritual Summon a "Mythic HERO" Ritual Monster, this 1 card can be used as the entire requirement for that Ritual Summon.
+● ${ONCE_PER_TURN_THIS|Mythic HERO Homer}'''
+ot = "CUSTOM"
+
+[card.mythic-hero-gilgamesh]
+name = "Mythic HERO Gilgamesh"
+id = 83650004
+series = "mythic-hero"
+type = "ritual effect monster"
+race = "warrior"
+attribute = "EARTH"
+level = 4
+atk = 1800
+def = 1200
+effect = '''${MYTHIC_RITUAL_REQ|8}
+● You can reveal this card in your hand; Special Summon 1 Level 4 or lower "HERO" Normal Monster from your hand or Deck, and if you do, banish 1 "HERO" monster from your GY.
+● If this card is Special Summoned: You can add 1 "Mythic" card from your Deck to your hand.
+● ${ONCE_PER_TURN_EACH|Mythic HERO Gilgamesh}'''
+ot = "CUSTOM"
+
+[card.mythic-hero-enheduanna]
+name = "Mythic HERO Enheduanna"
+id = 83650005
+series = "mythic-hero"
+type = "ritual effect monster"
+race = "spellcaster"
+attribute = "LIGHT"
+level = 6
+atk = 2100
+def = 2500
+effect = '''${MYTHIC_RITUAL_REQ|12}
+● During your Main Phase: You can banish 1 random "HERO" monster from your Extra Deck and the top card of your Deck; look at a number of cards from the top of your Deck equal to the highest Level or Rank among those 2 banished cards, add 1 Spell from among them to your hand, also place the remaining cards on the bottom of the Deck in any order.
+● ${ONCE_PER_TURN_EACH|Mythic HERO Enheduanna}'''
+ot = "CUSTOM"
+
+[card.mythic-hero-beowulf]
+name = "Mythic HERO Beowulf"
+id = 83650006
+series = "mythic-hero"
+type = "ritual effect monster"
+race = "warrior"
+attribute = "EARTH"
+level = 8
+atk = 2800
+def = 2000
+effect = '''${MYTHIC_RITUAL_REQ|16}
+● (Quick Effect): You can target 1 "HERO" monster you control and 1 card your opponent controls; return the first target to the hand, and if you do, banish the second target.
+● ${ONCE_PER_TURN_EACH|Mythic HERO Beowulf}'''
+ot = "CUSTOM"
+
+[card.mythic-convergence]
+name = "Mythic Convergence"
+id = 83650007
+series = "mythic"
+type = "ritual spell"
+effect = '''${MYTHIC_RITUAL_SPELL_HEADER}
+● Tribute "HERO" monsters from your hand or field, then Ritual Summon 1 "Mythic HERO" Ritual Monster from your hand whose Level is less than or equal to the total Levels of the tributed monsters (even if 1 or more tributed monsters would exceed its Level). Immediately after this effect resolves, Fusion Summon 1 "HERO" Fusion Monster from your Extra Deck, by banishing the monsters tributed for this Ritual Summon from your GY as Fusion Material. 
+● If you Ritual Summon "Mythic HERO Beowulf" using this card, it cannot be destroyed by your opponent's card effects.
+● ${ONCE_PER_TURN_ACTIVATE|Mythic Convergence}'''
+ot = "CUSTOM"
+
+[card.mythic-transformation]
+name = "Mythic Transformation"
+id = 83650008
+series = "mythic"
+type = "quick-play spell"
+effect = '''(This card is also always treated as a "Mythic" Ritual Spell.)
+${MYTHIC_RITUAL_SPELL_HEADER}
+● Tribute 1 "HERO" monster from your hand or field, then Ritual Summon 1 "Mythic HERO" Ritual Monster from your hand whose Level is less than or equal to the Level of the tributed monster. Immediately after this effect resolves, Special Summon 1 "Masked HERO" monster from your Extra Deck with the same Attribute as the tributed monster, by banishing that tributed monster from your GY (this is treated as a Special Summon with "Mask Change"). 
+● If you Ritual Summon "Mythic HERO Enheduanna" using this card, your opponent cannot activate cards or effects in response to this card's activation.
+● ${ONCE_PER_TURN_ACTIVATE|Mythic Transformation}'''
+ot = "CUSTOM"
+
+[card.mythic-manifestation]
+name = "Mythic Manifestation"
+id = 83650009
+series = "mythic"
+type = "ritual spell"
+effect = '''${MYTHIC_RITUAL_SPELL_HEADER}
+● Ritual Summon 1 "Mythic HERO" Ritual Monster from your hand or Deck, by sending Spells from your hand and/or field to the GY as the required Level. Each card sent to the GY this way is treated as Level 1. You cannot send "HERO" Spells to the GY to Ritual Summon "Mythic HERO Homer" using this card.
+● If a "Mythic HERO" Ritual Monster(s) you control would be destroyed by battle or card effect, you can banish this card from your GY instead.
+● ${ONCE_PER_TURN_ACTIVATE|Mythic Manifestation}'''
+ot = "CUSTOM"
+
+[card.elemental-hero-quasar-neos]
+name = "Elemental HERO Quasar Neos"
+id = 83650010
+series = "elemental-hero"
+type = "fusion effect monster"
+race = "warrior"
+attribute = "LIGHT"
+level = 10
+atk = 3500
+def = 3000
+effect = ''' "Elemental HERO Neos" + 1 Level 7 or higher "Mythic HERO" Ritual Monster
+Must first be Special Summoned (from your Extra Deck) by shuffling the above cards you control into the Deck (you do not use "Polymerization"), including a monster that was Ritual Summoned. Cannot be Special Summoned in other ways.
+● This card's name becomes "Elemental HERO Neos" while on the field or in the GY.
+● If this card attacks, your opponent cannot activate cards or effects until the end of the Damage Step, also it is unaffected by other cards' effects during the Battle Phase only. 
+● At the end of the Damage Step, if this card attacked: You can shuffle 3 of your banished "HERO" monsters into the Deck; this card can attack an additional time in a row. 
+● If this card would be returned to the Extra Deck: You can Special Summon 1 "Mythic HERO" Ritual Monster from your GY instead.'''
+ot = "CUSTOM"

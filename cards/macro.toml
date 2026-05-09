@@ -1,0 +1,20 @@
+[macro]
+MYTHIC_RITUAL_REQ = '''You can Ritual Summon this card with a "Mythic" Ritual Spell.
+● During your Main Phase: You can Ritual Summon this card from your GY by returning banished "HERO" monsters to the Deck whose total Levels equal $1 or more.'''
+
+ONCE_PER_TURN = '''You can only use $1 effect of "$2" once per turn.'''
+
+ONCE_PER_TURN_EACH = '''${ONCE_PER_TURN|each|$1}'''
+
+ONCE_PER_TURN_THIS = '''${ONCE_PER_TURN|this|$1}'''
+
+ONCE_PER_TURN_ACTIVATE = '''You can only activate 1 "$1" per turn.'''
+
+MYTHIC_RITUAL_SPELL_HEADER = '''This card is used to Ritual Summon any "Mythic HERO" Ritual Monster.'''
+
+DUAL_ATTR_REQ = '''1 $1 or $2 $3 + 1 $1 or $2 monster.
+This card is also treated as a $2 monster.'''
+
+ARCHETYPE_DUAL_ATTR_REQ = '''${DUAL_ATTR_REQ|$1|$2|"$3" monster}'''
+
+EHERO_DUAL_ATTR_REQ = '''${ARCHETYPE_DUAL_ATTR_REQ|$1|$2|HERO}'''

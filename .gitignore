@@ -1,0 +1,9 @@
+# Auto-generated config
+config.toml
+
+# Build outputs
+expansions/
+.deps/
+
+# Generated card images
+pics/EDOPro/
