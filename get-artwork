@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# -ne 2 ]]; then
+    echo "Usage: $(basename "$0") <card_id> <url>" >&2
+    exit 1
+fi
+
+id="$1"
+url="$2"
+
+url_name="${url##*/}"
+url_name="${url_name%%\?*}"
+ext="${url_name##*.}"
+ext="${ext/jpeg/jpg}"
+
+mkdir -p artwork/original
+
+curl -fsSL \
+    -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" \
+    -H "Referer: ${url%%/images/*}/" \
+    -o "artwork/original/${url_name}" "$url"
+cp "artwork/original/${url_name}" "artwork/${id}.${ext}"
+
+echo "Saved:"
+echo "  artwork/original/${url_name}"
+echo "  artwork/${id}.${ext}"
