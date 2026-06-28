@@ -33,6 +33,10 @@ recipe = ['cards/sets.toml', 'cards/macro.toml', 'cards/orichalcos.toml']
 default = true
 recipe = ['cards/sets.toml', 'cards/macro.toml', 'cards/other.toml']
 
+[expansion.pendulum]
+default = true
+recipe = ['cards/sets.toml', 'cards/macro.toml', 'cards/pendulum.toml']
+
 [expansion.soul]
 default = true
 recipe = ['cards/sets.toml', 'cards/macro.toml', 'cards/soul.toml']

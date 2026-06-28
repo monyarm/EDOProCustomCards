@@ -4,6 +4,10 @@ MAKEFLAGS += -j -l $(shell nproc)
 
 SHELL := $(shell which zsh) -o extendedglob -o kshglob
 
+VIPS_LIB_DIR := $(shell nix-build '<nixpkgs>' -A vips.out --no-out-link)/lib
+override LD_LIBRARY_PATH := $(VIPS_LIB_DIR):$(LD_LIBRARY_PATH)
+export LD_LIBRARY_PATH
+
 # Shared recipe files included in every expansion
 shared := cards/sets.toml cards/macro.toml
 # Card-specific tomls (everything except shared files)
