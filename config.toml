@@ -37,6 +37,10 @@ recipe = ['cards/sets.toml', 'cards/macro.toml', 'cards/other.toml']
 default = true
 recipe = ['cards/sets.toml', 'cards/macro.toml', 'cards/pendulum.toml']
 
+[expansion.reptilianne]
+default = true
+recipe = ['cards/sets.toml', 'cards/macro.toml', 'cards/reptilianne.toml']
+
 [expansion.soul]
 default = true
 recipe = ['cards/sets.toml', 'cards/macro.toml', 'cards/soul.toml']

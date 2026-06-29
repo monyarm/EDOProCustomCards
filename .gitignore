@@ -2,7 +2,7 @@
 config.toml
 
 # Build outputs
-expansions/
+#expansions/
 .deps/
 
 # Generated card images
