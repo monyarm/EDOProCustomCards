@@ -73,6 +73,8 @@ expansions/%.cdb: cards/%.toml $(shared) config.toml | expansions
 # actual rebuild triggers come from the CDB and artwork prereqs injected by the sidecar.
 .deps/.stamp_%: expansions/%.cdb | .deps/%.d
 	flock /tmp/ygofab.lock -c "ygofab compose -p proxy -e $*"
+	mv pics/proxy/*.* pics
+	#mv pics/proxy/field/*.* pics/field
 	@touch $@
 
 clean:
