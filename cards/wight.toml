@@ -1,0 +1,48 @@
+[card.wight-scraps]
+name = "Wight Scraps"
+id = 83750001
+type = "monster synchro"
+effect = '''
+1 Zombie Tuner + 1 "Skull Servant" or monster that mentions it
+For this card's Synchro Summon, you can treat 1 "Skull Servant" you control as a Tuner.
+This card's name becomes "Skull Servant" while in the GY.
+If this card is Synchro Summoned: Send the top 2 cards of your Deck to the GY.
+During your End Phase, except the turn this card was Summoned: Send the top card of your Deck to the GY.
+When a Level 3 or lower Zombie monster you control is targeted for an attack or by a card or effect (Quick Effect): You can change the target to this card.
+When this card is targeted for an attack, or by a card or effect (Quick Effect): You can negate that attack or effect.
+You may only use each effect of ~ once per turn. 
+'''
+atk = 700
+def = 1400
+race = "zombie"
+attribute = "dark"
+level = 4
+author = "MidniteDreamsArt"
+ot = "CUSTOM"
+
+[card.wight-bbq]
+name = "Wight BBQ"
+id = 83750002
+type = "monster fusion"
+effect = '''
+WIP!!!
+1 "Wight Baking" + 1 "Skull Servant" or monster that mentions it + Zombie Monster on the field.
+If being special summoned from the extra deck; Must be special summoned by shuffling the Chosen cards from the Field, Hand, and/or Grave into the Deck.
+This card's name becomes "Skull Servant" while in the GY.
+While this card is face up on the field:
+- All Zombie Monsters on your side of the Field gain x200 ATK and DEF for every Skull Servant and Zombie Monsters that are Lv 4 or less, which are in the Grave.
+- All Zombie Monsters on your opponent's side of the Field loses x200 ATK and DEF for every Skull Servant and Zombie Monsters that are Lv 4 or less, which are in the Grave.
+There's a few things I'd change. I don't like the idea of being able to use so many materials from the GY.
+I think i'd make it so you can use 1 from the GY, and 1 from your opponent's Side, and make it something like:
+"Wightbaking" + 4+ Zombie Monsters
+You can use 1 "Skull Servant" or monster that mentions it from your GY as a material for this card's Fusion Summon. If Zombie World is face-up on the field, you can use one of your opponent's Zombie Monsters as a material for this card's Fusion Summon.
+I'm also thinking maybe make it a contact fusion?
+The buff is a bit powerful, so i'd definitely tweak it, but not a bad idea.
+'''
+atk = 1000
+def = 1000
+level = 3
+race = "zombie"
+attribute = "fire"
+author = "MidniteDreamsArt"
+ot= "CUSTOM"

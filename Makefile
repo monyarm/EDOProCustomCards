@@ -19,7 +19,7 @@ dep_files    := $(addprefix .deps/,$(addsuffix .d,$(card_names)))
 
 .SECONDARY: $(cdbs)
 .DEFAULT_GOAL := default
-.PHONY: default install clean uninstall
+.PHONY: default install clean uninstall %
 
 # Resolve all artwork files for ids declared in a given card TOML.
 get_img = $(shell awk -F= '/^[[:space:]]*id[[:space:]]*=/{gsub(/[[:space:]]/, "", $$2); print $$2}' $(1) | while read -r id; do print -r -- artwork/$$id.*(N); done)
@@ -48,6 +48,9 @@ config.toml: $(card_data) $(shared)
 		echo "year = $$(date +%Y)"; \
 		echo "field = true"; \
 	} > $@
+
+%: expansions/%.cdb .deps/%.d .deps/.stamp_%
+	@:
 
 # Step A: data build only (safe to run in parallel).
 expansions/%.cdb: cards/%.toml $(shared) config.toml | expansions

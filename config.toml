@@ -45,6 +45,10 @@ recipe = ['cards/sets.toml', 'cards/macro.toml', 'cards/reptilianne.toml']
 default = true
 recipe = ['cards/sets.toml', 'cards/macro.toml', 'cards/soul.toml']
 
+[expansion.wight]
+default = true
+recipe = ['cards/sets.toml', 'cards/macro.toml', 'cards/wight.toml']
+
 [picset.proxy]
 mode = 'proxy'
 size = '512x'
