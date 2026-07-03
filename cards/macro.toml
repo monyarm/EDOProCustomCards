@@ -18,3 +18,7 @@ This card is also treated as a $2 monster.'''
 ARCHETYPE_DUAL_ATTR_REQ = '''${DUAL_ATTR_REQ|$1|$2|"$3" monster}'''
 
 EHERO_DUAL_ATTR_REQ = '''${ARCHETYPE_DUAL_ATTR_REQ|$1|$2|HERO}'''
+
+GEMINI = "This card is treated as a Normal Monster while face-up on the field or in the GY. While this card is a Normal Monster on the field, you can Normal Summon it to have it become an Effect Monster with this effect:"
+
+WIGHT_GY = "This card's name becomes \"Skull Servant\" while in the GY."

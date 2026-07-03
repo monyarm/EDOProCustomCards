@@ -2,6 +2,9 @@
 -- ID: 83750001
 local s, id = GetID()
 
+local SKULL_SERVANT = 32274490
+s.listed_names = {SKULL_SERVANT}
+
 function s.initial_effect(c)
     -- Synchro Summon procedure
     c:EnableReviveLimit()

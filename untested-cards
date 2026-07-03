@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# -lt 1 ]]; then
+    echo "Usage: $0 <name>"
+    exit 1
+fi
+
+script_dir="$(cd "$(dirname "$0")" && pwd)"
+file="$script_dir/cards/$1.toml"
+
+if [[ ! -f "$file" ]]; then
+    echo "File not found: $file" >&2
+    exit 1
+fi
+
+awk '
+/^\[card\./ {
+    if (section != "") {
+        total++
+        if (working == "true") tested++
+        else print card_name != "" ? card_name : section
+    }
+    section = $0
+    sub(/^\[card\./, "", section)
+    sub(/\].*$/, "", section)
+    card_name = ""
+    working = ""
+}
+/^name[[:space:]]*=/ {
+    val = $0
+    sub(/^name[[:space:]]*=[[:space:]]*"/, "", val)
+    sub(/"[[:space:]]*$/, "", val)
+    card_name = val
+}
+/^working[[:space:]]*=[[:space:]]*"true"/ {
+    working = "true"
+}
+END {
+    if (section != "") {
+        total++
+        if (working == "true") tested++
+        else print card_name != "" ? card_name : section
+    }
+    if (total > 0)
+        printf "\n%d / %d tested (%.0f%%)\n", tested, total, (tested / total) * 100
+}
+' "$file"

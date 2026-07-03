@@ -2,7 +2,7 @@ MAKEFLAGS += --no-builtin-rules
 MAKEFLAGS += --no-builtin-variables
 MAKEFLAGS += -j -l $(shell nproc)
 
-SHELL := $(shell which zsh) -o extendedglob -o kshglob
+SHELL := $(shell which zsh) -o extendedglob -o kshglob -o nullglob
 
 VIPS_LIB_DIR := $(shell nix-build '<nixpkgs>' -A vips.out --no-out-link)/lib
 override LD_LIBRARY_PATH := $(VIPS_LIB_DIR):$(LD_LIBRARY_PATH)
@@ -73,8 +73,9 @@ expansions/%.cdb: cards/%.toml $(shared) config.toml | expansions
 # actual rebuild triggers come from the CDB and artwork prereqs injected by the sidecar.
 .deps/.stamp_%: expansions/%.cdb | .deps/%.d
 	flock /tmp/ygofab.lock -c "ygofab compose -p proxy -e $*"
-	mv pics/proxy/*.* pics
-	#mv pics/proxy/field/*.* pics/field
+	\mv pics/proxy/*.* pics
+	for f in pics/proxy/field/*(N.); do mv "$$f" pics/field/; done
+	rmdir pics/proxy/{,field} 2>/dev/null || true
 	@touch $@
 
 clean:

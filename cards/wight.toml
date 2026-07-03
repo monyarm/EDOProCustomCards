@@ -1,11 +1,11 @@
 [card.wight-scraps]
 name = "Wight Scraps"
 id = 83750001
-type = "monster synchro"
+type = "monster synchro effect"
 effect = '''
-1 Zombie Tuner + 1 "Skull Servant" or monster that mentions it
+1 Zombie Tuner + 1+ "Skull Servant" or monster that mentions it
 For this card's Synchro Summon, you can treat 1 "Skull Servant" you control as a Tuner.
-This card's name becomes "Skull Servant" while in the GY.
+${WIGHT_GY}
 If this card is Synchro Summoned: Send the top 2 cards of your Deck to the GY.
 During your End Phase, except the turn this card was Summoned: Send the top card of your Deck to the GY.
 When a Level 3 or lower Zombie monster you control is targeted for an attack or by a card or effect (Quick Effect): You can change the target to this card.
@@ -19,16 +19,17 @@ attribute = "dark"
 level = 4
 author = "MidniteDreamsArt"
 ot = "CUSTOM"
+working = "true"
 
 [card.wight-bbq]
 name = "Wight BBQ"
 id = 83750002
-type = "monster fusion"
+type = "monster fusion effect"
 effect = '''
 WIP!!!
 1 "Wight Baking" + 1 "Skull Servant" or monster that mentions it + Zombie Monster on the field.
-If being special summoned from the extra deck; Must be special summoned by shuffling the Chosen cards from the Field, Hand, and/or Grave into the Deck.
-This card's name becomes "Skull Servant" while in the GY.
+If being special summoned from the extra deck; Must be special summoned by shuffling the chosen cards from the Field, Hand, and/or Grave into the Deck.
+${WIGHT_GY}
 While this card is face up on the field:
 - All Zombie Monsters on your side of the Field gain x200 ATK and DEF for every Skull Servant and Zombie Monsters that are Lv 4 or less, which are in the Grave.
 - All Zombie Monsters on your opponent's side of the Field loses x200 ATK and DEF for every Skull Servant and Zombie Monsters that are Lv 4 or less, which are in the Grave.
@@ -47,3 +48,256 @@ attribute = "fire"
 author = "MidniteDreamsArt"
 ot= "CUSTOM"
 
+[card.wight-dual-burial]
+name = "Wight Dual-Burial"
+id = 83750003
+type = "spell normal"
+effect = '''
+Excavate the top card of your Deck, and if it is a Zombie monster, send it to the GY, also, immediately after this effect resolves, you can Normal Summon 1 Gemini monster from your field. Otherwise, shuffle it back into the Deck. You can only activate 1 "Wight Dual-Burial" per turn.
+'''
+strings = [
+  "Excavate and send Zombie to GY",
+  "Normal Summon a Gemini monster?",
+]
+author = "Sam Wolfe Connelly"
+ot = "CUSTOM"
+working = "true"
+
+[card.wight-gemini]
+name = "Wight Gemini"
+id = 83750004
+type = "monster effect gemini"
+effect = '''
+${WIGHT_GY}
+${GEMINI}
+● You can banish this card from your field; Special Summon up to 2 Level 2 or lower Normal Monsters from your GY, except "Wight Gemini".
+'''
+atk = 300
+def = 200
+race = "zombie"
+attribute = "dark"
+level = 1
+author = "Konami China"
+ot = "CUSTOM"
+working = "true"
+
+[card.wight-militia]
+name = "Wight Militia"
+id = 83750005
+type = "monster effect gemini"
+effect = '''
+${WIGHT_GY}
+${GEMINI}
+● This card gains 100 ATK for each "Skull Servant" and "King of the Skull Servants" in your GY. If this card destroys a monster by battle: You can target 1 Normal Monster in your GY; Special Summon it.
+'''
+atk = 1200
+def = 0
+race = "zombie"
+attribute = "dark"
+level = 1
+author = "Melissa A. Benson"
+ot = "CUSTOM"
+working = "true"
+
+[card.wight-polymer]
+name = "Wight Plunderer"
+id = 83750006
+type = "monster effect gemini"
+effect = '''
+${WIGHT_GY}
+${GEMINI}
+● During your Main Phase: You can discard 1 card; add 1 Spell/Trap from either player's Deck or GY to your hand that mentions "Skull Servant", or is a "Gemini" Spell/Trap, "Super Double Summon", "Unleash Your Power!", "Herculean Power", "Supervise", or "Catalyst Field".
+'''
+atk = 500
+def = 0
+race = "zombie"
+attribute = "dark"
+level = 2
+author = "Loïc Canavaggia"
+ot = "CUSTOM"
+working = "true"
+
+[card.call-of-the-bone-sovereign]
+name = "Call of the Bone Sovereign"
+id = 83750007
+type = "spell ritual"
+effect = '''
+This card is used to Ritual Summon any Zombie Ritual Monster. You must also Tribute Zombie monsters from your field, and/or "Skull Servant" or monsters that specifically list "Skull Servant" in their text from your hand, whose total Levels equal or exceed the Level of the Ritual Monster you Ritual Summon. You can also use up to 1, plus the number of face-up "King of the Skull Servants" you control, "Skull Servant" or monsters that specifically list "Skull Servant" in their text from your GY as Tributes; those are banished instead. If "Zombie World" is face-up on the field, you can also Tribute 1 Zombie monster your opponent controls as part of the Tribute requirement. If a face-up "Wightarcanist" you control is destroyed, Tributed, or used as Fusion Material, while this card is in your GY: You can shuffle this card from your GY into your Deck. You can only use each effect of "Call of the Bone Sovereign" once per turn.
+'''
+author = "Sandra Everingham"
+ot = "CUSTOM"
+strings = [
+  "Ritual Summon",
+  "If a face-up \"Wightarcanist\" you control is destroyed or Tributed: Shuffle this card into the Deck",
+]
+working = "true"
+
+[card.wightdissolver]
+name = "Wightdissolver"
+id = 83750008
+type = "monster effect"
+effect = '''
+(This card is always treated as a Rock monster.)
+${WIGHT_GY}
+This card can be used as a substitute for "Dissolverock" for a Fusion Summon. If this card is sent to the GY for the Fusion Summon of a Zombie monster: You can send the top 2 cards of your Deck to the GY. While this card is in your GY or banished, "Flame Ghost" on your field, in your GY, or while banished is also treated as "Skull Servant".
+'''
+atk = 900
+def = 1000
+race = "zombie"
+attribute = "dark"
+level = 3
+author = "Gemini AI"
+ot = "CUSTOM"
+working = "true"
+
+[card.wightwarrior]
+name = "Wightwarrior"
+id = 83750009
+type = "monster effect"
+effect = '''
+(This card is always treated as a Warrior monster.)
+${WIGHT_GY}
+This card can be used as a substitute for "Battle Warrior" for a Fusion Summon. If you control a Zombie monster, you can Special Summon this card (from your hand). While this card is in your GY or banished, "Zombie Warrior" on your field, in your GY, or while banished is also treated as "Skull Servant".
+'''
+atk = 700
+def = 1000
+race = "zombie"
+attribute = "dark"
+level = 3
+author = "Gemini AI"
+ot = "CUSTOM"
+working = "true"
+
+[card.haunting-wight]
+name = "Haunting Wight"
+id = 83750010
+type = "trap normal"
+effect = '''
+When an opponent's monster declares an attack: Special Summon this card as an Effect Monster in Defense Position (Zombie/DARK/Level 1/ATK 0/DEF 0). (This card is NOT treated as a Trap Card while it is a monster.) While this card is in the GY, its name becomes "Skull Servant". If this card was Special Summoned by this effect and is sent to the GY: Send the top card of your Deck to the GY.
+'''
+author = "Jeff A. Menges"
+ot = "CUSTOM"
+working = "true"
+
+[card.wightshield-paladin]
+name = "Wightshield Paladin"
+id = 83750011
+type = "monster effect union"
+effect = '''
+${WIGHT_GY}
+Once per turn, you can either: Target 1 Zombie monster you control; equip this card to that target, OR: Unequip this card and Special Summon it in face-up Attack Position. If the equipped monster would be destroyed by battle or card effect, destroy this card instead. If this card is sent from the field to the GY while equipped to a monster: Send the top card of your Deck to the GY.
+'''
+atk = 500
+def = 0
+race = "zombie"
+attribute = "dark"
+level = 1
+author = "hefestow"
+ot = "CUSTOM"
+working = "true"
+
+[card.wight-o-the-wisp]
+name = "Wight-o'-the-Wisp"
+id = 83750012
+type = "monster effect spirit"
+effect = '''
+Cannot be Special Summoned. During the End Phase of the turn this card was Normal Summoned or flipped face-up: Return this card to the hand.
+${WIGHT_GY}
+If a "King of the Skull Servants" or "Skull Servant" you control would be destroyed by battle or card effect: You can discard this card instead; send the top 2 cards of your Deck to the GY.
+'''
+strings = ["If a \"King of the Skull Servants\" or \"Skull Servant\" you control would be destroyed: discard this card instead, then send the top 2 cards of your Deck to the GY?"]
+atk = 200
+def = 200
+race = "zombie"
+attribute = "dark"
+level = 2
+author = "R-AvenArt"
+ot = "CUSTOM"
+working = "true"
+
+[card.wight-maestro]
+name = "Wight Maestro"
+id = 83750013
+type = "monster effect tuner"
+effect = '''
+${WIGHT_GY}
+If this card is Normal or Special Summoned: Excavate the top 2 cards of your Deck; send any excavated "Skull Servant" or monsters that mention "Skull Servant" to the GY, also place the remaining cards on the bottom of your Deck in any order. You can banish this card from your GY; increase or decrease the Level of 1 Zombie monster you control by 1 until the end of this turn. You can only use each effect of "Wightconductor" once per turn.
+'''
+atk = 0
+def = 0
+race = "zombie"
+attribute = "dark"
+level = 1
+author = "leylinefount"
+ot = "CUSTOM"
+working = "true"
+
+[card.wightarcanist]
+name = "Wightarcanist"
+id = 83750014
+type = "monster effect ritual"
+effect = '''
+You can Ritual Summon this card with "Call of the Bone Sovereign".
+${WIGHT_GY}
+Gains 500 ATK/DEF for each "Skull Servant" and "King of the Skull Servants" in your GY. If this card is Ritual Summoned: You can target 1 of your banished "Skull Servant" or monsters that mention "Skull Servant"; return it to the GY. You can only use the second effect of "Wightarcanist" once per turn.
+'''
+atk = 0
+def = 0
+race = "zombie"
+attribute = "dark"
+level = 4
+author = "Virginia Elwood"
+ot = "CUSTOM"
+working = "true"
+
+[card.wightcharge]
+name = "Wightcharge!!!"
+id = 83750015
+type = "monster effect flip"
+effect = '''
+${WIGHT_GY}
+FLIP: Send the top 3 cards of your Deck to the GY; if any "Skull Servant" or monsters that mention "Skull Servant" were sent to the GY by this effect, you can target cards your opponent controls, up to the number of those monsters sent; destroy them.
+'''
+atk = 0
+def = 2000
+race = "zombie"
+attribute = "dark"
+level = 3
+author = "NéNé Thomas"
+ot = "CUSTOM"
+working = "true"
+
+[card.wight-amalgamation]
+name = "Wight Amalgamation"
+id = 83750016
+type = "monster effect fusion tuner"
+effect = '''
+5 Zombie monsters, including 1 "Skull Servant" or 1 monster that specifically lists "Skull Servant" in its text
+Must be Special Summoned from your Extra Deck by shuffling the above monsters you control into the Deck, and cannot be Special Summoned by other ways. If "Zombie World" is face-up on the field, you can also use 1 face-up Zombie monster your opponent controls and/or 1 of your banished Zombie monsters as Fusion Materials. Once per turn: You can send 1 monster from your Deck to the GY; this card's Level becomes its current Level plus or minus the sent monster's Level (your choice), also this card's name is treated as the sent monster's name until the end of this turn.
+'''
+strings = [
+  "Fusion Summon 1 'Wight Amalgamation'",
+  "Send 1 monster from your Deck to the GY",
+  "Use 1 opponent's Zombie monster as Fusion Material?",
+  "Use 1 of your banished Zombie monsters as Fusion Material?",
+  "Increase Level by sent monster's Level",
+  "Decrease Level by sent monster's Level",
+]
+atk = 4000
+def = 0
+race = "zombie"
+attribute = "dark"
+level = 5
+author = "Vincent Proce"
+ot = "CUSTOM"
+
+[card.grave-tithe]
+name = "Grave Tithe"
+id = 83750017
+type = "spell normal"
+effect = '''
+Discard 1 non-Zombie card; add 1 Zombie monster or 1 Spell from your GY to your hand.
+'''
+author = "Mark Tedin"
+ot = "CUSTOM"
+working = "true"
