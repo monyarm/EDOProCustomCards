@@ -1,7 +1,7 @@
 [card.reptilianne-echidna]
 name = "Reptilianne Echidna"
 id = 83740002
-type = "monster synchro"
+type = "monster synchro effect"
 effect = '''
 1 Reptile Tuner + 1+ non-Tuner monsters
 If this card is Synchro Summoned: You can target 1 face-up monster your opponent controls; change its ATK to 0. During your Main Phase, if your opponent controls a monster(s) with 0 ATK: You can add Reptile monsters with different names from your Deck to your hand, up to the number of monsters your opponent controls with 0 ATK, also, you cannot Special Summon monsters from the Extra Deck for the rest of this turn, except Reptile monsters. You can only use each effect of "Reptilianne Echidna" once per turn.

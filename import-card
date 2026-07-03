@@ -1,0 +1,509 @@
+#!/usr/bin/env python3
+"""Import a card from the game's CDBs into a custom toml."""
+
+import re
+import sys
+import sqlite3
+import shutil
+import argparse
+import urllib.request
+import urllib.error
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).parent
+GAME_DIR   = Path("/home/monyarm/Games/EDOPro")
+
+CDB_FILES = [
+    GAME_DIR / "expansions" / "cards.cdb",
+    GAME_DIR / "expansions" / "cards-unofficial.cdb",
+    GAME_DIR / "expansions" / "cards-unofficial-new.cdb",
+]
+GAME_SCRIPT_DIRS = [
+    GAME_DIR / "script" / "official",
+    GAME_DIR / "script",
+]
+CUSTOM_SCRIPT_DIR = SCRIPT_DIR / "script"
+CARDS_DIR         = SCRIPT_DIR / "cards"
+ARTWORK_DIR       = SCRIPT_DIR / "artwork"
+ARTWORK_URL       = "https://images.ygoprodeck.com/images/cards_cropped/{id}.jpg"
+
+# ── bit-flag tables (from ygofab lib/codes.lua) ────────────────────────────
+
+ATTRIBUTES = {
+    0x001: "earth", 0x002: "water", 0x004: "fire", 0x008: "wind",
+    0x010: "light", 0x020: "dark",  0x040: "divine",
+}
+RACES = {
+    0x0000001: "warrior",     0x0000002: "spellcaster", 0x0000004: "fairy",
+    0x0000008: "fiend",       0x0000010: "zombie",      0x0000020: "machine",
+    0x0000040: "aqua",        0x0000080: "pyro",        0x0000100: "rock",
+    0x0000200: "winged-beast",0x0000400: "plant",       0x0000800: "insect",
+    0x0001000: "thunder",     0x0002000: "dragon",      0x0004000: "beast",
+    0x0008000: "beast-warrior",0x0010000: "dinosaur",   0x0020000: "fish",
+    0x0040000: "sea-serpent", 0x0080000: "reptile",     0x0100000: "psychic",
+    0x0200000: "divine-beast",0x0400000: "creator-god", 0x0800000: "wyrm",
+    0x1000000: "cyberse",
+}
+TYPES = {
+    0x0000001: "monster",    0x0000002: "spell",      0x0000004: "trap",
+    0x0000010: "normal",     0x0000020: "effect",     0x0000040: "fusion",
+    0x0000080: "ritual",     0x0000200: "spirit",     0x0000400: "union",
+    0x0000800: "gemini",     0x0001000: "tuner",      0x0002000: "synchro",
+    0x0004000: "token",      0x0010000: "quickplay",  0x0020000: "continuous",
+    0x0040000: "equip",      0x0080000: "field",      0x0100000: "counter",
+    0x0200000: "flip",       0x0400000: "toon",       0x0800000: "xyz",
+    0x1000000: "pendulum",   0x2000000: "nomi",       0x4000000: "link",
+}
+
+T_PENDULUM = 0x1000000
+T_XYZ      = 0x0800000
+T_LINK     = 0x4000000
+T_SYNCHRO  = 0x0002000
+T_NORMAL   = 0x0000010
+T_EFFECT   = 0x0000020
+LINKS = {
+    0x040: "top-left", 0x080: "top",    0x100: "top-right",
+    0x008: "left",                       0x020: "right",
+    0x001: "bottom-left", 0x002: "bottom", 0x004: "bottom-right",
+}
+
+# separator line in the game DB (40 dashes)
+PEND_DESC_PAT = re.compile(r'\[.*?\]\s*(.*?)\s*-{3,}\s*\[.*?\]\s*(.*?)\s*$', re.DOTALL)
+
+# ── helpers ────────────────────────────────────────────────────────────────
+
+def decode_flags(value, table):
+    parts, b = [], 1
+    while b <= value:
+        if value & b and b in table:
+            parts.append(table[b])
+        b <<= 1
+    return " ".join(parts)
+
+def is_flag(type_val, flag): return bool(type_val & flag)
+IS_MONSTER  = lambda t: is_flag(t, 0x1)
+IS_PENDULUM = lambda t: is_flag(t, T_PENDULUM)
+IS_XYZ      = lambda t: is_flag(t, T_XYZ)
+IS_LINK     = lambda t: is_flag(t, T_LINK)
+IS_NORMAL   = lambda t: is_flag(t, T_NORMAL) and not is_flag(t, T_EFFECT)
+
+def get_level(raw):    return raw & 0xFFFF
+def get_lscale(raw):   return (raw >> 24) & 0xFF
+def get_rscale(raw):   return (raw >> 16) & 0xFF
+
+def parse_effects(desc, type_val):
+    """Return (effect_or_flavor, pendulum_effect_or_None)."""
+    desc = (desc or "").strip()
+    if IS_PENDULUM(type_val):
+        m = PEND_DESC_PAT.match(desc)
+        if m:
+            return m.group(2).strip(), m.group(1).strip()
+    return desc, None
+
+def slugify(name):
+    s = name.lower()
+    s = re.sub(r"[^a-z0-9\s-]", "", s)
+    s = re.sub(r"\s+", "-", s.strip())
+    s = re.sub(r"-+", "-", s)
+    return s
+
+def toml_quoted(s):
+    return '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+def toml_multiline(s):
+    return f"'''\n{s}\n'''"
+
+# ── CDB lookup ─────────────────────────────────────────────────────────────
+
+def find_card(card_id):
+    for path in CDB_FILES:
+        if not path.exists():
+            continue
+        try:
+            conn = sqlite3.connect(str(path))
+            conn.row_factory = sqlite3.Row
+            cur = conn.cursor()
+            cur.execute("""
+                SELECT d.id, d.ot, d.alias, d.setcode, d.type,
+                       d.atk, d.def, d.level, d.race, d.attribute, d.category,
+                       t.name, t.desc,
+                       t.str1,  t.str2,  t.str3,  t.str4,
+                       t.str5,  t.str6,  t.str7,  t.str8,
+                       t.str9,  t.str10, t.str11, t.str12,
+                       t.str13, t.str14, t.str15, t.str16
+                FROM datas d JOIN texts t ON d.id = t.id
+                WHERE d.id = ?
+            """, (card_id,))
+            row = cur.fetchone()
+            conn.close()
+            if row:
+                return dict(row)
+        except Exception as e:
+            print(f"Warning: could not read {path}: {e}", file=sys.stderr)
+    return None
+
+# ── transformation helpers ─────────────────────────────────────────────────
+
+def apply_unpendulum(type_val, effect, pend_effect):
+    """Remove pendulum flag; keep only the monster effect."""
+    return type_val & ~T_PENDULUM, effect, None
+
+def apply_link_convert(type_val, raw_lv, def_, target):
+    """Convert a link monster to synchro or xyz."""
+    type_val = (type_val & ~T_LINK) | (T_SYNCHRO if target == "synchro" else T_XYZ)
+    level    = get_level(raw_lv)   # was link-rating
+    return type_val, level, 0       # (type, level, def)
+
+# ── ID allocation ──────────────────────────────────────────────────────────
+
+def next_id_in_file(toml_path):
+    """Return max(id)+1 from the given toml. Exits with an error if no IDs found."""
+    if not toml_path.exists():
+        print(f"Error: {toml_path} does not exist", file=sys.stderr)
+        sys.exit(1)
+    ids = [int(m) for m in re.findall(r'^\s*id\s*=\s*(\d+)', toml_path.read_text(), re.M)]
+    if not ids:
+        print(f"Error: no 'id = ...' entries found in {toml_path}\n"
+              f"Add at least one card with a starting id manually.", file=sys.stderr)
+        sys.exit(1)
+    return max(ids) + 1
+
+# ── TOML generation ────────────────────────────────────────────────────────
+
+def build_toml_entry(card, new_id, unpendulum=False, link_convert=None):
+    t      = card["type"]
+    raw_lv = card["level"]
+    atk    = card["atk"]
+    def_   = card["def"]
+    name   = card["name"]
+
+    effect, pend_effect = parse_effects(card["desc"], t)
+
+    # apply transformations before decoding flags
+    if unpendulum and IS_PENDULUM(t):
+        if pend_effect is None:
+            # Pattern didn't match — desc is unsplit; drop all effect text rather than merge
+            print("Warning: could not split pendulum/monster effects from desc; "
+                  "effect field left blank — edit manually.", file=sys.stderr)
+            effect = ""
+        t, effect, pend_effect = apply_unpendulum(t, effect, pend_effect)
+
+    if link_convert and IS_LINK(t):
+        t, raw_lv, def_ = apply_link_convert(t, raw_lv, def_, link_convert)
+
+    type_str = decode_flags(t,                 TYPES)
+    attr_str = decode_flags(card["attribute"], ATTRIBUTES)
+    race_str = decode_flags(card["race"],      RACES)
+
+    slug  = slugify(name)
+    lines = [f"[card.{slug}]"]
+
+    lines.append(f"id = {new_id}")
+    lines.append(f"name = {toml_quoted(name)}")
+    lines.append(f"type = {toml_quoted(type_str)}")
+
+    if IS_MONSTER(t):
+        lines.append(f"attribute = {toml_quoted(attr_str)}")
+        lines.append(f"race = {toml_quoted(race_str)}")
+
+        if IS_LINK(t):
+            lines.append(f"link-rating = {get_level(raw_lv)}")
+            arrows = decode_flags(def_ & 0x1EF, LINKS)
+            if arrows:
+                lines.append(f"link-arrows = {toml_quoted(arrows)}")
+            lines.append(f"atk = {atk}")
+        elif IS_XYZ(t):
+            lines.append(f"rank = {get_level(raw_lv)}")
+            lines.append(f"atk = {atk}")
+            lines.append(f"def = {def_}")
+        else:
+            lines.append(f"level = {get_level(raw_lv)}")
+            if IS_PENDULUM(t):
+                lsc, rsc = get_lscale(raw_lv), get_rscale(raw_lv)
+                scale = str(lsc) if lsc == rsc else f"[{lsc}, {rsc}]"
+                lines.append(f"pendulum-scale = {scale}")
+            lines.append(f"atk = {atk}")
+            lines.append(f"def = {def_}")
+
+    # strings (str1–str16), omit empties
+    strs = [card.get(f"str{i}") or "" for i in range(1, 17)]
+    strs = [s for s in strs if s.strip()]
+    if strs:
+        strs_toml = "[" + ", ".join(toml_quoted(s) for s in strs) + "]"
+        lines.append(f"strings = {strs_toml}")
+
+    if IS_PENDULUM(t) and pend_effect:
+        lines.append(f"pendulum-effect = {toml_multiline(pend_effect)}")
+
+    if effect:
+        key = "flavor-text" if (IS_NORMAL(t) and not IS_PENDULUM(t)) else "effect"
+        lines.append(f"{key} = {toml_multiline(effect)}")
+
+    lines.append('ot = "CUSTOM"')
+    lines.append(f"# source id: {card['id']}")
+
+    return "\n".join(lines) + "\n"
+
+# ── Lua script transformations ────────────────────────────────────────────
+
+def _strip_trailing_comment(lines):
+    """Remove the last line(s) if they are comment-only (-- ...) lines."""
+    while lines and lines[-1].strip().startswith('--'):
+        lines.pop()
+
+
+def _collect_effect_block(lines, idx):
+    """Collect a 'local eN = Effect.CreateEffect(c)' block through its
+    matching c:RegisterEffect(eN) call.
+    Returns (var, block_lines, next_idx) or (None, None, idx+1)."""
+    m = re.match(r'\s*(local\s+)?(e\d+)\s*=\s*Effect\.CreateEffect\(', lines[idx])
+    if not m:
+        return None, None, idx + 1
+    var = m.group(2)
+    reg = re.compile(rf'c:RegisterEffect\(\s*{re.escape(var)}\s*\)')
+    block, j = [], idx
+    while j < len(lines):
+        block.append(lines[j])
+        if reg.search(lines[j]):
+            j += 1
+            break
+        j += 1
+    return var, block, j
+
+
+def _collect_toplevel_func(lines, idx):
+    """Collect a top-level Lua function (no leading indent) starting at idx,
+    ending at the first bare 'end' at column 0.
+    Returns (block_lines, next_idx)."""
+    block = [lines[idx]]
+    j = idx + 1
+    while j < len(lines):
+        block.append(lines[j])
+        if re.match(r'^end\b', lines[j]):
+            j += 1
+            break
+        j += 1
+    return block, j
+
+
+def transform_script_unpendulum(lua):
+    """Remove Pendulum.AddProcedure, all LOCATION_PZONE effect blocks,
+    and any helper functions left unreferenced afterwards."""
+    lines = lua.splitlines(keepends=True)
+
+    # Pass 1: strip Pendulum.AddProcedure and PZONE effect blocks
+    result = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+
+        if re.search(r'Pendulum\.AddProcedure', line):
+            _strip_trailing_comment(result)
+            i += 1
+            continue
+
+        if re.search(r'Effect\.CreateEffect\(', line):
+            var, block, next_i = _collect_effect_block(lines, i)
+            if var and 'LOCATION_PZONE' in ''.join(block):
+                _strip_trailing_comment(result)
+                i = next_i
+                continue
+            if block:
+                result.extend(block)
+                i = next_i
+                continue
+
+        result.append(line)
+        i += 1
+
+    # Pass 2: iteratively remove unreferenced helper functions using segment model
+    # Parse result into interleaved code/function segments
+    body = ''.join(result)
+    lines2 = body.splitlines(keepends=True)
+    segments = []   # [{'type': 'code'|'func', 'name': str|None, 'lines': [...]}]
+    j = 0
+    while j < len(lines2):
+        m = re.match(r'^function s\.(\w+)\b', lines2[j])
+        if m:
+            fname = m.group(1)
+            blk, next_j = _collect_toplevel_func(lines2, j)
+            segments.append({'type': 'func', 'name': fname, 'lines': blk})
+            j = next_j
+        else:
+            if segments and segments[-1]['type'] == 'code':
+                segments[-1]['lines'].append(lines2[j])
+            else:
+                segments.append({'type': 'code', 'name': None, 'lines': [lines2[j]]})
+            j += 1
+
+    kept = {s['name'] for s in segments if s['type'] == 'func'}
+    kept.add('initial_effect')
+
+    changed = True
+    while changed:
+        changed = False
+        for seg in segments:
+            if seg['type'] != 'func' or seg['name'] not in kept or seg['name'] == 'initial_effect':
+                continue
+            name = seg['name']
+            ref_found = any(
+                other is not seg
+                and (other['type'] == 'code' or other['name'] in kept)
+                and re.search(rf'\bs\.{re.escape(name)}\b', ''.join(other['lines']))
+                for other in segments
+            )
+            if not ref_found:
+                kept.discard(name)
+                changed = True
+
+    result2 = []
+    for seg in segments:
+        if seg['type'] == 'code' or seg['name'] in kept:
+            result2.extend(seg['lines'])
+
+    return re.sub(r'\n{3,}', '\n\n', ''.join(result2))
+
+
+# Link-specific API calls that need manual rewriting after conversion
+_LINK_APIS = re.compile(
+    r'\b(GetLinkedGroup|GetMutualLinkedGroup|GetLinkCount|GetLinkRating'
+    r'|IsLinked|IsMutuallyLinked|GetLinkMarkers|c:EnableReviveLimit)\b'
+)
+
+
+def transform_script_link_convert(lua, target):
+    """Convert a Link script to Synchro or XYZ:
+    - Link.AddProcedure → Synchro/XYZ placeholder comment
+    - TYPE_LINK / SUMMON_TYPE_LINK → TYPE_SYNCHRO/XYZ / SUMMON_TYPE_SYNCHRO/XYZ
+    - Link-specific API calls annotated with TODO
+    """
+    t_upper = target.upper()
+    lines = lua.splitlines(keepends=True)
+    result = []
+    for line in lines:
+        # Replace Link.AddProcedure with a commented placeholder
+        def replace_link_proc(m):
+            inner = m.group(1)          # everything inside Link.AddProcedure(...)
+            mat_filter = inner.split(',')[1].strip() if ',' in inner else 'nil'
+            n = inner.split(',')[-1].strip().rstrip(')') if ',' in inner else inner.rstrip(')')
+            if target == 'synchro':
+                return (f'Synchro.AddProcedure(c, nil, 1, {mat_filter}, '
+                        f'math.max(0,{n}-1))  --TODO: verify tuner/nontuner filters')
+            else:
+                return (f'-- XYZ.AddProcedure: set rank={n} and add overlay procedure'
+                        f'  --TODO: implement XYZ summon procedure')
+        line = re.sub(r'Link\.AddProcedure\(([^)]+)\)', replace_link_proc, line)
+
+        line = re.sub(r'\bTYPE_LINK\b',         f'TYPE_{t_upper}',         line)
+        line = re.sub(r'\bSUMMON_TYPE_LINK\b',  f'SUMMON_TYPE_{t_upper}',  line)
+
+        if _LINK_APIS.search(line):
+            stripped = line.rstrip('\n\r')
+            eol = line[len(stripped):]
+            line = stripped + '  --TODO: link-specific, needs rewrite' + eol
+
+        result.append(line)
+    return ''.join(result)
+
+
+# ── file operations ────────────────────────────────────────────────────────
+
+def copy_script(card_id, new_id, transform=None):
+    for script_dir in GAME_SCRIPT_DIRS:
+        src = script_dir / f"c{card_id}.lua"
+        if src.exists():
+            dst = CUSTOM_SCRIPT_DIR / f"c{new_id}.lua"
+            content = src.read_text(encoding='utf-8', errors='replace')
+            if transform:
+                content = transform(content)
+            dst.write_text(content, encoding='utf-8')
+            note = ' (transformed)' if transform else ''
+            print(f"Copied script  → script/c{new_id}.lua{note}")
+            return
+    print(f"Note: no script found for id {card_id} in game script dirs")
+
+def download_artwork(card_id, new_id):
+    url = ARTWORK_URL.format(id=card_id)
+    dst = ARTWORK_DIR / f"{new_id}.jpg"
+    ARTWORK_DIR.mkdir(exist_ok=True)
+    try:
+        req = urllib.request.Request(
+            url, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0"}
+        )
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            dst.write_bytes(resp.read())
+        print(f"Downloaded art  → artwork/{new_id}.jpg")
+    except urllib.error.HTTPError as e:
+        print(f"Warning: artwork download failed ({e.code} {e.reason}) — {url}")
+    except Exception as e:
+        print(f"Warning: artwork download failed — {e}")
+
+# ── main ───────────────────────────────────────────────────────────────────
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Import a card from the game CDBs into a custom toml."
+    )
+    parser.add_argument("card_id", type=int, help="Original game card id")
+    parser.add_argument(
+        "--toml",
+        metavar="NAME",
+        default=None,
+        help="Target toml name under cards/ (without .toml). "
+             "Defaults to 'pendulum' when --unpendulum is used."
+    )
+    parser.add_argument(
+        "--unpendulum", action="store_true",
+        help="Strip pendulum type/scale; keep only the monster effect"
+    )
+    convert_group = parser.add_mutually_exclusive_group()
+    convert_group.add_argument(
+        "--as-synchro", action="store_true",
+        help="Convert a Link monster to Synchro (link-rating becomes level)"
+    )
+    convert_group.add_argument(
+        "--as-xyz", action="store_true",
+        help="Convert a Link monster to Xyz (link-rating becomes rank)"
+    )
+    args = parser.parse_args()
+
+    link_convert = "synchro" if args.as_synchro else ("xyz" if args.as_xyz else None)
+
+    if args.toml is None:
+        if args.unpendulum:
+            args.toml = "pendulum"
+        else:
+            parser.error("--toml NAME is required (e.g. --toml wight)")
+
+    toml_path = CARDS_DIR / f"{args.toml}.toml"
+    card = find_card(args.card_id)
+    if not card:
+        print(f"Error: card {args.card_id} not found in any CDB", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"Found: {card['name']}  (original id: {args.card_id})")
+
+    new_id = next_id_in_file(toml_path)
+    print(f"Custom id: {new_id}  (from {toml_path.name})")
+
+    entry = build_toml_entry(card, new_id,
+                             unpendulum=args.unpendulum,
+                             link_convert=link_convert)
+
+    with open(toml_path, "a") as f:
+        f.write("\n" + entry)
+    print(f"Appended entry → cards/{args.toml}.toml")
+
+    # Determine script transform based on original card type
+    orig_type = card["type"]
+    script_transform = None
+    if args.unpendulum and IS_PENDULUM(orig_type):
+        script_transform = transform_script_unpendulum
+    elif link_convert and IS_LINK(orig_type):
+        script_transform = lambda lua: transform_script_link_convert(lua, link_convert)
+
+    copy_script(args.card_id, new_id, transform=script_transform)
+    download_artwork(args.card_id, new_id)
+
+if __name__ == "__main__":
+    main()

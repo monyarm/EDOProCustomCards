@@ -24,3 +24,67 @@ set = "crystal"
 effect = '''
 You can Tribute this card; add 1 "Ultimate Crystal" monster, "Crystal Beast" monster, or "Crystal" Spell/Trap from your Deck to your hand.'''
 ot = "CUSTOM"
+
+[card.lunalight-wolf]
+id = 145000001
+name = "Lunalight Wolf"
+type = "monster effect"
+attribute = "light"
+race = "beast-warrior"
+level = 6
+atk = 2000
+def = 1800
+strings = ["Fusion Summon"]
+effect = '''
+If a "Lunalight" monster you control attacks a Defense Position monster, inflict piercing battle damage to your opponent.
+'''
+ot = "CUSTOM"
+# source id: 47705572
+
+[card.lunalight-tiger]
+id = 145000002
+name = "Lunalight Tiger"
+type = "monster effect"
+attribute = "light"
+race = "beast-warrior"
+level = 3
+atk = 1200
+def = 800
+strings = ["Special Summon"]
+effect = '''
+If this card on the field is destroyed by battle or card effect: You can target 1 "Lunalight" monster in your Graveyard; Special Summon it. You can only use this effect of "Lunalight Tiger" once per turn.
+'''
+ot = "CUSTOM"
+# source id: 83190280
+
+[card.frightfur-meister]
+id = 145000003
+name = "Frightfur Meister"
+type = "monster effect"
+attribute = "dark"
+race = "fiend"
+level = 8
+atk = 0
+def = 0
+strings = ["Special Summon 1 Fiend monster from your Deck", "Special Summon 1 \"Frightfur\", \"Fluffal\", or \"Edge Imp\"", "Special Summon 1 \"Frightfur\" Fusion Monster", "Affected by \"Frightfur Meister\": cannot Special Summon from the Extra Deck, except Fusion Monsters"]
+effect = '''
+During your Main Phase: You can Special Summon 1 Level 4 or lower "Frightfur", "Fluffal", or "Edge Imp" monster from your Deck, also you cannot Special Summon monsters from the Extra Deck for the rest of this turn, except Fusion Monsters. You can Tribute 2 or more Fiend monsters; Special Summon 1 "Frightfur" Fusion Monster from your Extra Deck, whose Level equals the combined original Levels of those monsters. (This is treated as a Fusion Summon.) You can only use each effect of "Frightfur Meister" once per turn.
+'''
+ot = "CUSTOM"
+# source id: 77522571
+
+[card.fluffal-angel]
+id = 145000004
+name = "Fluffal Angel"
+type = "monster effect"
+attribute = "light"
+race = "fairy"
+level = 2
+atk = 600
+def = 1200
+strings = ["Special Summon 1 \"Fluffal\" or \"Edge Imp\" ", "Special Summon 1 \"Frightfur\" Fusion", "Affected by \"Fluffal Angel\": cannot Special Summon from the Extra Deck, except Fusion monsters"]
+effect = '''
+You can Tribute this card, then target 1 "Frightfur" Fusion Monster in your GY; discard 1 card, and if you do, Special Summon the targeted monster. You can only use this effect of "Fluffal Angel" once per turn.
+'''
+ot = "CUSTOM"
+# source id: 45215225
