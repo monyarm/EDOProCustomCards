@@ -221,7 +221,7 @@ id = 83750013
 type = "monster effect tuner"
 effect = '''
 ${WIGHT_GY}
-If this card is Normal or Special Summoned: Excavate the top 2 cards of your Deck; send any excavated "Skull Servant" or monsters that mention "Skull Servant" to the GY, also place the remaining cards on the bottom of your Deck in any order. You can banish this card from your GY; increase or decrease the Level of 1 Zombie monster you control by 1 until the end of this turn. You can only use each effect of "Wightconductor" once per turn.
+If this card is Normal or Special Summoned: Excavate the top 2 cards of your Deck; send any excavated "Skull Servant" or monsters that mention "Skull Servant" to the GY, also place the remaining cards on the bottom of your Deck in any order. You can banish this card from your GY; increase or decrease the Level of 1 Zombie monster you control by 1 until the end of this turn. You can only use each effect of "Wight Maestro" once per turn.
 '''
 atk = 0
 def = 0
@@ -299,5 +299,62 @@ effect = '''
 Discard 1 non-Zombie card; add 1 Zombie monster or 1 Spell from your GY to your hand.
 '''
 author = "Mark Tedin"
+ot = "CUSTOM"
+working = "true"
+
+[card.wightbrarian]
+name = "Wightbrarian"
+id = 83750018
+type = "monster effect"
+effect = '''
+${WIGHT_GY}
+You can discard this card, then target 1 Zombie Fusion Monster in your Extra Deck and reveal it; add 1 monster from your Deck or GY to your hand that is mentioned on that revealed card, or 1 "Polymerization" or "Fusion" Spell/Trap from your Deck or GY. If this card is sent to the GY, you can add 1 Spell/Trap that mentions "Skull Servant" from your Deck or GY to your hand, but you can't activate it this turn.
+'''
+atk = 300
+def = 300
+race = "zombie"
+attribute = "dark"
+level = 2
+author = "Gemini AI"
+ot = "CUSTOM"
+working = "true"
+
+[card.wight-desperado]
+name = "Wight Desperado"
+id = 83750019
+type = "monster effect"
+effect = '''
+${WIGHT_GY}
+If this card is Normal or Special Summoned, or flipped face-up: You can target 1 Zombie monster OR 1 Spell card in your GY; shuffle it into the Deck, and if you do, draw 1 card. You can banish this card from your GY; target 1 "Skull Servant" or card that mentions it in your GY, and 1 Zombie monster or Spell card in your GY; shuffle both into the Deck. You can only use each effect of "Wight Desperado" once per turn.
+'''
+strings = [
+  "Select a Zombie monster or Spell card to shuffle",
+  "Select 1 Skull Servant mention and 1 Zombie/Spell",
+  "Select 1 Skull Servant or card that mentions it",
+  "Select 1 Zombie monster or Spell card",
+]
+atk = 0
+def = 1800
+race = "zombie"
+attribute = "dark"
+level = 1
+author = "Boris Vallejo"
+ot = "CUSTOM"
+working = "true"
+
+[card.grand-necro-archive]
+name = "Grand Necro-Archive"
+id = 83750020
+type = "monster fusion effect"
+effect = '''
+1 Zombie Normal Monster + 1 Zombie Fusion Monster + 1 Zombie Synchro Monster + 1 Zombie Ritual Monster
+Must be Fusion Summoned and cannot be Special Summoned by other ways. Gains 100 ATK for each Zombie monster in either player's GY. While face-up on the field or in the GY, you cannot lose the Duel by drawing from an empty Deck. Your opponent cannot target other Zombie monsters you control with card effects. During your End Phase: You can target up to 3 cards in your GY; shuffle them into the Deck. If this card leaves the field: Shuffle 5 random cards from your GY into the Deck.
+'''
+atk = 1000
+def = 1000
+race = "zombie"
+attribute = "dark"
+level = 12
+author = "Carl Critchlow"
 ot = "CUSTOM"
 working = "true"
